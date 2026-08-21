@@ -259,7 +259,7 @@ export default function Home() {
         {stage === "overview" && (
           <div className="screen overview-screen">
             <div className="overview-heading">
-              <div><p className="kicker">Für deinen Übergang</p><h1>Ein Raum für {activeDirection.label.toLowerCase()}.</h1></div>
+              <div><p className="kicker">Für deinen Übergang</p><h1>Ein Raum für {activeDirection.label}.</h1></div>
               <button className="text-action" type="button" onClick={() => setStage("direction")}>Ändern</button>
             </div>
             <button className="featured-session" type="button" onClick={() => setStage("player")}>

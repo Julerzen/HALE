@@ -286,7 +286,7 @@ h1 {
 .state-scale-heading label { font-size: 13px; font-weight: 600; }
 .state-scale-heading output { color: var(--ink); font-family: var(--font-geist-mono), monospace; font-size: 21px; }
 .state-scale-heading output span { color: var(--ink-soft); font-size: 10px; }
-.state-scale input { width: 100%; height: 30px; margin: 0; appearance: none; background: transparent; cursor: pointer; }
+.state-scale input { width: 100%; height: 44px; margin: 0; appearance: none; background: transparent; cursor: pointer; }
 .state-scale input::-webkit-slider-runnable-track { height: 3px; border-radius: 20px; background: linear-gradient(90deg, var(--smoked-wood), var(--clay), var(--sand-light)); }
 .state-scale input::-webkit-slider-thumb { width: 26px; height: 26px; margin-top: -11px; appearance: none; border: 7px solid var(--charcoal); border-radius: 50%; background: var(--sand-light); box-shadow: 0 3px 10px rgba(36, 35, 29, 0.25); }
 .state-scale input::-moz-range-track { height: 3px; border-radius: 20px; background: linear-gradient(90deg, var(--smoked-wood), var(--clay), var(--sand-light)); }
@@ -299,7 +299,7 @@ h1 {
 .svac-scales .state-scale { padding: 11px 13px 9px; }
 .svac-scales .state-scale-heading { margin-bottom: 5px; }
 .svac-scales .state-scale-heading output { font-size: 15px; }
-.svac-scales .state-scale input { height: 25px; }
+.svac-scales .state-scale input { height: 36px; }
 .svac-scales .scale-labels { font-size: 8px; }
 
 /* Snapshot */
@@ -410,7 +410,7 @@ h1 {
 .player-details p { margin: 5px 0 0; color: rgba(238, 228, 210, 0.48); font-size: 9px; line-height: 1.45; }
 .player-options { display: flex; justify-content: space-between; align-items: center; margin: 16px 0 12px; color: rgba(238, 228, 210, 0.58); font-size: 10px; }
 .segmented { display: flex; padding: 3px; border: 1px solid var(--line); border-radius: 100px; }
-.segmented button { min-height: 34px; border: 0; border-radius: 100px; padding: 6px 12px; background: transparent; cursor: pointer; font-size: 10px; }
+.segmented button { min-height: 40px; border: 0; border-radius: 100px; padding: 6px 12px; background: transparent; cursor: pointer; font-size: 10px; }
 .segmented-dark { border-color: var(--light-line); }
 .segmented-dark button { color: rgba(238, 228, 210, 0.58); }
 .segmented-dark button[data-selected="true"] { background: var(--sand-light); color: var(--night); }

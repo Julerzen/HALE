@@ -65,11 +65,13 @@ Passed locally on 2026-08-21:
 - strict TypeScript check — passed;
 - optimized Next.js production build — passed;
 - local HTTP render — `GET /` returned 200 with the expected v0.3 opening and metadata.
+- Vercel Preview build — READY;
+- deployed interactive browser flow — opening, skip path, complete check-in, matrix, SVAC radar, desired direction, overview, player, timer, pause, reflection, and back-value preservation passed;
+- method boundary — Klarheit showed an explicitly open method while Ruhe alone showed provisional 4-in/4-out coherence;
+- app-origin browser errors and warnings — none observed.
 
 Still required before merge:
 
-- automated interactive browser-flow and accessibility smoke test on the deployed preview;
-- Vercel Preview READY state;
 - iPhone product acceptance.
 
 ## Merge state
