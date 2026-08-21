@@ -33,6 +33,16 @@ Central Notion entry:
 - [Inspiration Library](https://app.notion.com/p/3c346ad5a7ba814e86c9c3eb9fb90597)
 - [Breathe With Sandy Analysis](https://app.notion.com/p/3c346ad5a7ba8188a2e9fa1f8aa8917a)
 
+## Release control
+
+- [HALE Release Playbook](RELEASE_PLAYBOOK.md)
+- [Release record template](releases/RELEASE_RECORD_TEMPLATE.md)
+- [Current Work to Evening v0.2 record](releases/2026-08-21-work-to-evening-v0.2.md)
+- Automatic gate: `.github/workflows/quality.yml`
+- Pull requests use `.github/PULL_REQUEST_TEMPLATE.md` for scope, inspiration evidence, verification, and explicit approval.
+
+A Vercel deployment with status `READY` is preview evidence only. It does not by itself make a prototype merge-ready.
+
 ## Current prototype status
 
 Implemented in Draft PR #3:
@@ -157,15 +167,19 @@ The HALE play/start mark, motion, proportions, color, imagery, and sound must be
 
 Before deployment or merge, verify:
 
-- [ ] this file and the affected Notion pages were reviewed
+- [ ] this file, the release playbook, the current release record, and affected Notion pages were reviewed
 - [ ] implemented status is distinguished from hypothesis or inspiration
 - [ ] user flow still matches the required experience sequence
 - [ ] check-in language remains optional and non-diagnostic
-- [ ] visual references are translated, not copied
+- [ ] visual references are translated, not copied, and have visible implementation evidence
 - [ ] safety, privacy, accessibility, and rights are checked
-- [ ] relevant tests and production build pass
+- [ ] GitHub Quality Gate and relevant tests pass
+- [ ] Vercel preview is `READY` for the exact PR head commit
+- [ ] mobile core flow and browser console were checked on that preview
 - [ ] PR description states what changed and which HALE decisions it implements
+- [ ] known limitations and rollback path are recorded
 - [ ] Notion and GitHub no longer materially disagree
+- [ ] Julian explicitly approved the named PR and exact head commit
 
 ## Maintenance rule
 

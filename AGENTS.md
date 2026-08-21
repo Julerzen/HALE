@@ -7,6 +7,7 @@ These instructions apply to the entire repository.
 Before product, UX, content, design-system, deployment, or merge work, read:
 
 - [HALE implementation context](docs/HALE_IMPLEMENTATION_CONTEXT.md)
+- [HALE release playbook](docs/RELEASE_PLAYBOOK.md) before preview, deployment, or merge work
 
 When the Notion connector is available, also fetch the affected sources linked from that document. Do not rely on one chat transcript as the complete source of truth.
 
@@ -28,7 +29,9 @@ When the Notion connector is available, also fetch the affected sources linked f
 
 ## Before deployment or merge
 
-- Review the deployment and merge gate in `docs/HALE_IMPLEMENTATION_CONTEXT.md`.
+- Review the deployment and merge gate in `docs/HALE_IMPLEMENTATION_CONTEXT.md` and follow `docs/RELEASE_PLAYBOOK.md`.
+- Create or update the current release record under `docs/releases/`.
+- Confirm that the PR head, GitHub checks, and Vercel preview all refer to the same commit.
 - Run the relevant build, type, test, and accessibility checks.
-- Update the PR description and the handoff when product behavior or design direction changes.
-- Do not merge unless the user explicitly requests the merge.
+- Update the PR description, release record, and handoff when product behavior or design direction changes.
+- Do not merge unless the user explicitly approves the named PR and exact head commit.
