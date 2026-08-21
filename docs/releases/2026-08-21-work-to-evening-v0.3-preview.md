@@ -14,7 +14,7 @@ Repair the failed v0.2 iPhone product acceptance by making the complete core jou
 4. desired direction;
 5. curated overview;
 6. dedicated player;
-7. practice preview;
+7. distinct, image-led practice room with the opening aperture;
 8. value-free reflection.
 
 ## Implemented in this candidate
@@ -25,14 +25,17 @@ Repair the failed v0.2 iPhone product acceptance by making the complete core jou
 - Four-axis SVAC radar with an explicit screen-reader description.
 - Five voluntary directions: Ruhe, Klarheit, Aktivierung, Verbindung, and Nur wahrnehmen.
 - One honest prototype session rather than a fictional content catalogue.
-- Immersive player with duration selection, dominant start action, sound-development status, pause, close, timer, and reflection.
+- Immersive pre-session player with duration selection and a dominant start action.
+- A separate post-start practice room with a full-screen original background, repeated HALE Aperture, timer, progress, pause/resume, close, method disclosure, and reflection.
 - 4-in/4-out coherence is restricted to Ruhe and labeled provisional.
 - Other directions expose a neutral player test and state that their method is not yet defined.
-- Original CSS atmosphere only; no third-party image, audio, video, poetry, or copied layout.
+- Original generated HALE background plus original CSS atmosphere; no third-party image, audio, video, poetry, or copied layout.
 
 ## Visual hypothesis
 
 Grounded Pulse v0.3 carries the dark threshold mood through the journey and introduces warm sand, linen, travertine, smoked-wood, and clay-like material cues. It is inspired by the feeling of tactile Bali interiors, not by culturally specific symbols or copied decorative objects. Geist typography remains in use. This is a hypothesis, not approved CI.
+
+The post-start player tests a less brown-heavy extension in charcoal, smoky olive, muted mauve-grey, mineral linen, and one restrained amber light. Its original architectural threshold is stored at `public/images/hale-evening-threshold-v1.webp`. The supplied reference screenshot informs only full-bleed atmosphere, quiet information hierarchy, and progressive disclosure; its lantern scene, precise composition, icons, frequency display, and controls are not reused.
 
 ## Safety, privacy, and rights
 
@@ -53,6 +56,9 @@ Before merge or production deployment, verify on the user's iPhone:
 - Desired direction is clearly separate from current-state measurement.
 - Overview reads as curated rather than as a settings dashboard.
 - Player hierarchy, timing, pause, close, and reflection work.
+- Pressing the start action opens a visually distinct full-screen practice room rather than continuing on the pre-session detail screen.
+- The practice room visibly reuses the two-sided HALE Aperture from the opening and keeps text readable over the original background.
+- Pause/resume holds the timer, the progress indicator remains accurate, details are accessible, and short iPhone heights can scroll without clipped controls.
 - Ruhe is the only direction showing the provisional coherence method.
 - Klarheit and Aktivierung never claim to have a tailored method in this release.
 - No content is clipped by iPhone safe areas at small viewport heights.
@@ -72,7 +78,17 @@ Passed locally on 2026-08-21:
 
 Still required before merge:
 
+- a fresh Vercel preview and deployed browser-flow check for the post-start practice room;
 - iPhone product acceptance.
+
+## Player refinement · 21 August 2026
+
+- Reconciled the supplied player screenshot with the existing HALE Design System, Inspiration Library, User Journey, Safety Standard, draft PR, and production deployment.
+- Generated and visually inspected an original portrait architectural-threshold asset; compressed project copy is 941 × 1672 WebP.
+- Reused one HALE Aperture component in both opening and practice so the motif is structurally consistent rather than merely similar.
+- Kept the activation, clarity, connection, and observation methods explicitly open; no frequency display or unsupported effect claim was introduced.
+- `npm run check` passed locally after the refinement.
+- Local browser automation was unavailable because the packaged browser executable is absent; the deployed preview remains the required browser-verification surface before iPhone acceptance.
 
 ## Merge state
 

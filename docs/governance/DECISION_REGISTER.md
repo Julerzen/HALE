@@ -26,6 +26,7 @@ This register preserves the minimum set of decisions and explicitly labeled hypo
 | D-017 | Decision | The v0.3 acceptance path must expose optional check-in, activation–valence matrix, SVAC radar, curated overview, and immersive player before tailored methods are evaluated. | These surfaces are P0 release blockers and must be verified together on iPhone. |
 | D-018 | Hypothesis | Grounded Pulse v0.3 continues the dark, mystical threshold through warm sand, linen, travertine, smoked-wood, and clay-like surfaces. | Avoid pure-white screens, generic wellness cleanliness, copied Bali symbols, and any claim that this is final CI. |
 | D-019 | Decision | HALE must not present the same coherence exercise as the tailored method for Ruhe, Klarheit, and Aktivierung. | Ruhe may use a provisional 4-in/4-out coherence prototype; the methods for Klarheit, Aktivierung, Verbindung, and observation stay explicitly open until evaluated. |
+| D-020 | Hypothesis | After the start action, the practice room continues the opening's HALE Aperture over an original full-screen architectural twilight scene. | The supplied screenshot informs atmosphere, full-bleed hierarchy, and progressive disclosure only. Do not copy its image, layout, icons, frequency display, controls, or claims; keep method boundaries explicit. |
 
 ## Amendment rule
 

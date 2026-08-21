@@ -2,11 +2,12 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { StateScale, SvacCheckIn } from "./components/check-in";
+import { HaleAperture } from "./components/hale-aperture";
+import { PracticePlayer } from "./components/practice-player";
 import { SessionPlayer } from "./components/session-player";
 import { ActivationValenceMatrix, SvacRadar } from "./components/state-visuals";
 import {
   directions,
-  formatTime,
   initialSvac,
   reflections,
   type DirectionId,
@@ -138,11 +139,7 @@ export default function Home() {
             </div>
             <div className="aperture-space">
               <div className="pulse-field" aria-hidden="true"><i /><i /><i /></div>
-              <div className="hale-aperture" aria-hidden="true">
-                <span className="aperture-side aperture-left" />
-                <span className="aperture-core" />
-                <span className="aperture-side aperture-right" />
-              </div>
+              <HaleAperture />
               <p>Einatmen. Ausatmen.<br />Dazwischen beginnt dein Abend.</p>
             </div>
             <div className="opening-entry">
@@ -285,24 +282,16 @@ export default function Home() {
         )}
 
         {stage === "practice" && (
-          <div className="screen practice-screen">
-            <div className="practice-topbar">
-              <button className="wordmark wordmark-light" type="button" onClick={restart}>HALE</button>
-              <span className="timer" aria-label={`${formatTime(remainingSeconds)} verbleibend`}>{formatTime(remainingSeconds)}</span>
-              <button className="icon-action" type="button" onClick={finishPractice} aria-label="Session schließen">×</button>
-            </div>
-            <div className="practice-space" aria-live="polite">
-              <div className="practice-aperture" data-playing={isPlaying} data-coherence={isCoherencePrototype} data-phase={breathPhase} aria-hidden="true"><span /><i /></div>
-              <p className="practice-phase">{isCoherencePrototype ? breathPhase : "Natürlich atmen"}</p>
-              <h1>{isCoherencePrototype ? "Vier ein. Vier aus." : "Der Player ist bereit. Die Methode bleibt offen."}</h1>
-              <p>{isCoherencePrototype ? "Atme nur so tief, wie es angenehm ist. Du kannst jederzeit pausieren." : `Für ${activeDirection.label} legen wir die Praxis nach deiner Player-Abnahme gemeinsam fest. Bis dahin: nichts forcieren.`}</p>
-            </div>
-            <div className="sound-status"><span className="sound-bars" aria-hidden="true"><i /><i /><i /><i /></span><p><small>Sound</small>Original Atmosphere · in Entwicklung</p><span>—</span></div>
-            <div className="practice-controls">
-              <button className="round-control" type="button" onClick={() => setIsPlaying((current) => !current)} aria-label={isPlaying ? "Pausieren" : "Fortsetzen"}>{isPlaying ? "Ⅱ" : "▶"}</button>
-              <button className="text-action text-action-light" type="button" onClick={finishPractice}>Demo abschließen</button>
-            </div>
-          </div>
+          <PracticePlayer
+            direction={activeDirection}
+            minutes={minutes}
+            remainingSeconds={remainingSeconds}
+            isPlaying={isPlaying}
+            isCoherencePrototype={isCoherencePrototype}
+            breathPhase={breathPhase}
+            onTogglePlaying={() => setIsPlaying((current) => !current)}
+            onFinish={finishPractice}
+          />
         )}
 
         {stage === "reflection" && (

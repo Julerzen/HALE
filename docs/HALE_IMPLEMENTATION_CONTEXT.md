@@ -74,6 +74,7 @@ The v0.3 preview candidate, which is **not yet approved for `main` or production
 - the Grounded Pulse v0.3 visual hypothesis with dark atmospheric continuity and warm sand, linen, travertine, smoked-wood, and clay-like material cues;
 - a provisional 4-in/4-out coherence practice only for Ruhe;
 - an explicit “method still open” state for Klarheit, Aktivierung, Verbindung, and observation so the prototype does not fake differentiation;
+- a distinct post-start practice room with an original, project-owned architectural twilight background and the same two-sided HALE Aperture used in the opening;
 - no persistence, backend, third-party analytics, third-party audio, or copied reference assets.
 
 Not yet implemented or approved:
@@ -111,7 +112,9 @@ Raw values remain session-local by default. Persistence requires an explicit pro
 
 - **Opening:** learn from the threshold feeling of Breathe with Sandy, but do not copy its sea, concentric circles, assets, or standard in-app dashboard.
 - **Overview/navigation:** use Anima SoundScape Lab as a reference for hierarchy, scenario-led entry, atmospheric content cards, and progressive disclosure—not its assets, exact layout, typography, icons, or unsupported claims.
-- **Player:** explore an original full-screen HALE room with strong readability, one dominant start action, subordinate controls, and an interface that recedes during practice.
+- **Player:** explore an original full-screen HALE room with strong readability, one dominant start action, subordinate controls, and an interface that recedes during practice. The supplied lantern-player screenshot contributes only the principles of full-bleed atmosphere, information inside the scene, and progressive disclosure. Its photo, arrangement, icons, frequency display, copy, and distinctive execution are excluded.
+
+The current generated practice background is stored as `public/images/hale-evening-threshold-v1.webp`. It is an original HALE prototype asset: a charcoal and smoky-mauve architectural threshold with restrained amber light, deliberately avoiding the reference screenshot's lantern, alley, and brown-heavy grade.
 
 Melokind — “Kellermysterium” is a mood reference only. No copyrighted track may ship without a license.
 

@@ -60,3 +60,19 @@ Use this checklist for every material change. A checked list records review; it 
 - [ ] superseded variants removed, closed, or clearly deprecated
 - [ ] decision/change logged with date and rationale
 - [ ] weekly review can see the change and any remaining risk
+
+## Review record · v0.3 immersive practice-player refinement · 2026-08-21
+
+**Classification:** Draft implementation of D-020 (Hypothesis). Not approved CI, not approved for `main`, and not approved for production.
+
+- [x] Boot files, affected Notion pages, current `main`, draft PR #6, review threads, GitHub status, and Vercel state inspected
+- [x] No source conflict found; production remains on `6cf1e77`
+- [x] Reference screenshot separated into reusable principles and excluded distinctive elements
+- [x] Asset provenance and rights checked: original generated HALE asset, no third-party photo or UI asset shipped
+- [x] Method and claim boundary checked: Ruhe alone retains provisional 4-in/4-out; other methods remain open
+- [x] Accessibility reviewed: decorative image alt, contrast overlays, 44+ px controls, progress semantics, reduced motion, safe areas, and scroll fallback
+- [x] Context gate, strict TypeScript, and optimized production build passed locally
+- [ ] Fresh Vercel preview for the new PR head is READY
+- [ ] Deployed mobile browser flow for the new PR head is verified
+- [ ] iPhone product acceptance is passed for the exact new PR head
+- [ ] Explicit merge and production authorization is received for that exact commit
