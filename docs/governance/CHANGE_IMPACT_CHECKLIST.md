@@ -72,7 +72,7 @@ Use this checklist for every material change. A checked list records review; it 
 - [x] Method and claim boundary checked: Ruhe alone retains provisional 4-in/4-out; other methods remain open
 - [x] Accessibility reviewed: decorative image alt, contrast overlays, 44+ px controls, progress semantics, reduced motion, safe areas, and scroll fallback
 - [x] Context gate, strict TypeScript, and optimized production build passed locally
-- [ ] Fresh Vercel preview for the new PR head is READY
-- [ ] Deployed mobile browser flow for the new PR head is verified
+- [x] Fresh Vercel preview for implementation commit `5dae602` is READY (`dpl_4JYv98r3iBrtUcbEqdCtNwKnmDBa`)
+- [x] Deployed mobile browser flow for implementation commit `5dae602` is verified: Ruhe and Aktivierung reached the practice room, pause held the timer, disclosure opened, the original background loaded, and no app-origin browser errors were observed
 - [ ] iPhone product acceptance is passed for the exact new PR head
 - [ ] Explicit merge and production authorization is received for that exact commit

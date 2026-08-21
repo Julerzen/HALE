@@ -76,10 +76,15 @@ Passed locally on 2026-08-21:
 - method boundary — Klarheit showed an explicitly open method while Ruhe alone showed provisional 4-in/4-out coherence;
 - app-origin browser errors and warnings — none observed.
 
-Still required before merge:
+Verified for implementation commit `5dae60241b8e5a581be19bf17dc3424d317dee18`:
 
-- a fresh Vercel preview and deployed browser-flow check for the post-start practice room;
-- iPhone product acceptance.
+- Vercel preview deployment `dpl_4JYv98r3iBrtUcbEqdCtNwKnmDBa` reached READY;
+- deployed mobile-width flow reached the practice room from both Ruhe and Aktivierung;
+- the original full-bleed background and repeated HALE Aperture loaded;
+- pause held the timer, the details disclosure opened, and the activation route showed `Methodik noch offen` plus `Natürlich atmen`;
+- no app-origin browser errors were observed. Browser-extension metadata warnings were excluded from the app result.
+
+Still required before merge: iPhone product acceptance for the exact final PR head. A documentation-only follow-up may move the head without changing the verified implementation; its preview must still be READY before the iPhone link is handed over.
 
 ## Player refinement · 21 August 2026
 
@@ -88,7 +93,7 @@ Still required before merge:
 - Reused one HALE Aperture component in both opening and practice so the motif is structurally consistent rather than merely similar.
 - Kept the activation, clarity, connection, and observation methods explicitly open; no frequency display or unsupported effect claim was introduced.
 - `npm run check` passed locally after the refinement.
-- Local browser automation was unavailable because the packaged browser executable is absent; the deployed preview remains the required browser-verification surface before iPhone acceptance.
+- Local browser automation was unavailable because the packaged browser executable is absent; the deployed preview was therefore verified in the connected cloud browser before iPhone acceptance.
 
 ## Merge state
 
