@@ -1,4 +1,4 @@
-# HALE Foundation v0.2
+# HALE Foundation v0.3
 
 Status: Hypothesis  
 Date: 2026-08-21
@@ -41,18 +41,24 @@ HALE should not begin with techniques or specialist vocabulary. It should begin 
 
 The user chooses a situation or desired outcome. HALE selects and explains an appropriate method.
 
+## Primary persona hypothesis
+
+[Persona A — Between Ambition and Self-Connection](./personas/PERSONA_A.md) describes an academically educated urban professional in their late twenties or early thirties with a demanding corporate role, significant home-office work, high self- and external pacing, and an interest in design, movement, and non-dogmatic spirituality.
+
+Their central tension: they want to live consciously, but meditation, sport, and leisure easily become additional tasks inside an already crowded life.
+
+The persona is a founder hypothesis and must be validated through interviews and product tests.
+
+## Strategic usage hypothesis
+
+The transition around 17:00—from formal work into the evening—may be a distinctive HALE entry point. Morning practice remains relevant, but the work-to-evening transition appears less ritualized and directly connected to the persona's core tension.
+
 ## Initial content pillars
 
 - **Activation** — carefully reviewed practices for energy, alertness, and readiness.
 - **Regulation & Coherence** — practices for focus, calm, space, and inner silence.
 - **Meditation and poetry** — primarily in longer, immersive experiences.
 - **Learning** — concise, useful “Golden Nuggets” rather than overwhelming articles.
-
-## Initial user hypothesis
-
-Health-conscious, design-aware adults, approximately late twenties to forty, with demanding professional lives and an interest in yoga, Pilates, movement, high-quality products, and non-dogmatic spirituality.
-
-This is a research hypothesis, not a validated demographic definition.
 
 ## Differentiation hypothesis
 
@@ -93,7 +99,7 @@ Intensive or attention-altering practices must not be positioned for driving, wa
 ## Open questions
 
 - language validation of the job to be done
-- validated primary persona
+- validation of the primary persona through real interviews
 - final positioning and promise
 - balance between activation and regulation
 - expert safety review process
