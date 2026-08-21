@@ -1,63 +1,62 @@
-# HALE Change Impact Checklist
+# HALE change impact checklist
 
-Use this checklist for every relevant change.
+Use this checklist for every material change. A checked list records review; it does not turn a hypothesis into a decision.
 
-## 1. Classify the change
+## 0. Start and authority
 
-- [ ] Inspiration
-- [ ] Hypothesis
-- [ ] Draft
-- [ ] Decision
-- [ ] Implemented
+- [ ] `AGENTS.md`, manifest, handoff, and decision register read
+- [ ] affected canonical Notion pages fetched
+- [ ] current `main`, open PRs, and relevant deployment inspected
+- [ ] no unresolved source conflict
+- [ ] change classified: Inspiration / Hypothesis / Draft / Decision / Implemented
 
-## 2. Strategy
+## 1. Strategy
 
-- [ ] Foundation or positioning affected
-- [ ] User promise affected
-- [ ] Scope or roadmap affected
-- [ ] Decision rationale recorded in Notion
+- [ ] foundation, positioning, promise, scope, and roadmap impact checked
+- [ ] rationale recorded in the existing Notion page
+- [ ] persona or journey assumption still labeled correctly
 
-## 3. Brand and design
+## 2. Brand and design
 
-- [ ] Brand Bible updated
-- [ ] Logo or assets updated
-- [ ] Color and typography tokens updated
-- [ ] Components and interaction states updated
-- [ ] Motion and audio guidance updated
-- [ ] Accessibility checked
+- [ ] Brand Bible and decision status checked
+- [ ] logo, color, typography, components, motion, audio, and interaction states checked
+- [ ] accessibility and reduced-motion behavior checked
+- [ ] provisional CI is not presented as approved
 
-## 4. Product surfaces
+## 3. Product surfaces
 
-- [ ] App
-- [ ] Website
+- [ ] app and website
 - [ ] App Store / Play Store
-- [ ] Social media
-- [ ] Email / newsletter
-- [ ] Video and audio covers
-- [ ] Documents / presentations
-- [ ] Retreats / events
-- [ ] Products / packaging
+- [ ] social, email, video, and audio covers
+- [ ] documents and presentations
+- [ ] retreats, events, products, and packaging
 
-## 5. Content and safety
+## 4. Content, safety, privacy, and rights
 
-- [ ] Editorial guidance updated
-- [ ] Session taxonomy updated
-- [ ] Safety language reviewed
-- [ ] Evidence and claims reviewed
-- [ ] Copyright, licensing, and attribution reviewed
+- [ ] editorial guidance and session taxonomy
+- [ ] safety language, contraindications, and evidence/claims
+- [ ] privacy, analytics, retention, and consent
+- [ ] copyright, license, attribution, and asset provenance
+- [ ] public-use and attention-sensitive contexts
 
-## 6. Engineering
+## 5. Engineering and operations
 
-- [ ] Data model affected
-- [ ] APIs affected
-- [ ] Analytics and privacy affected
-- [ ] Tests updated
-- [ ] Documentation updated
-- [ ] Deployment verified
+- [ ] data model, APIs, analytics, and integrations
+- [ ] tests, types, accessibility, and production build
+- [ ] `npm run context:check` and `npm run check`
+- [ ] preview and Vercel status verified
+- [ ] handoff, manifest, decision register, and PR description updated
+
+## 6. Deployment and merge authorization
+
+- [ ] explicit instruction received in the current conversation
+- [ ] instruction originates from the user's iPhone; if ambiguous, stopped and asked
+- [ ] review threads and required checks are clear
+- [ ] `main` merge treated as a production deployment trigger
 
 ## 7. Close the loop
 
 - [ ] Notion and GitHub agree
-- [ ] Old variants removed or deprecated
-- [ ] Change logged with date and rationale
-- [ ] Weekly review includes the change
+- [ ] superseded variants removed, closed, or clearly deprecated
+- [ ] decision/change logged with date and rationale
+- [ ] weekly review can see the change and any remaining risk

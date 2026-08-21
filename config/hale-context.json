@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "name": "HALE",
+    "spelling": "H-A-L-E",
+    "repository": "Julerzen/HALE",
+    "defaultBranch": "main"
+  },
+  "lastReconciled": "2026-08-21",
+  "authority": {
+    "strategyAndRationale": "Notion",
+    "technicalImplementation": "GitHub main",
+    "collaboration": "ChatGPT project",
+    "conflictPolicy": "stop_and_surface"
+  },
+  "statusVocabulary": [
+    "Inspiration",
+    "Hypothesis",
+    "Draft",
+    "Decision",
+    "Implemented"
+  ],
+  "requiredBootFiles": [
+    "AGENTS.md",
+    "config/hale-context.json",
+    "docs/HALE_IMPLEMENTATION_CONTEXT.md",
+    "docs/governance/DECISION_REGISTER.md",
+    "docs/governance/CHANGE_IMPACT_CHECKLIST.md"
+  ],
+  "notionSources": [
+    {
+      "key": "operatingSystem",
+      "pageId": "3c346ad5-a7ba-8150-b629-d1a69f9bb266",
+      "url": "https://app.notion.com/p/3c346ad5a7ba8150b629d1a69f9bb266",
+      "requiredInHandoff": true
+    },
+    {
+      "key": "foundation",
+      "pageId": "3c346ad5-a7ba-815b-af99-e786398ddac5",
+      "url": "https://app.notion.com/p/3c346ad5a7ba815baf99e786398ddac5",
+      "requiredInHandoff": true
+    },
+    {
+      "key": "implementationPlan",
+      "pageId": "3c346ad5-a7ba-81cc-8b56-d520a64a46d6",
+      "url": "https://app.notion.com/p/3c346ad5a7ba81cc8b56d520a64a46d6",
+      "requiredInHandoff": true
+    },
+    {
+      "key": "designSystem",
+      "pageId": "3c346ad5-a7ba-813c-97c4-f0f9537db505",
+      "url": "https://app.notion.com/p/3c346ad5a7ba813c97c4f0f9537db505",
+      "requiredInHandoff": true
+    },
+    {
+      "key": "informationArchitecture",
+      "pageId": "3c346ad5-a7ba-819a-8a5a-f9860171bcd9",
+      "url": "https://app.notion.com/p/3c346ad5a7ba819a8a5af9860171bcd9",
+      "requiredInHandoff": true
+    },
+    {
+      "key": "userJourneys",
+      "pageId": "3c346ad5-a7ba-8135-b8a3-dd13c7a945f6",
+      "url": "https://app.notion.com/p/3c346ad5a7ba8135b8a3dd13c7a945f6",
+      "requiredInHandoff": true
+    },
+    {
+      "key": "stateCheckIn",
+      "pageId": "3c346ad5-a7ba-8138-bf0e-e64079e49bba",
+      "url": "https://app.notion.com/p/3c346ad5a7ba8138bf0ee64079e49bba",
+      "requiredInHandoff": true
+    },
+    {
+      "key": "inspirationLibrary",
+      "pageId": "3c346ad5-a7ba-814e-86c9-c3eb9fb90597",
+      "url": "https://app.notion.com/p/3c346ad5a7ba814e86c9c3eb9fb90597",
+      "requiredInHandoff": true
+    },
+    {
+      "key": "safety",
+      "pageId": "3c346ad5-a7ba-81a6-9e5d-f899aa2bcb24",
+      "url": "https://app.notion.com/p/3c346ad5a7ba81a69e5df899aa2bcb24",
+      "requiredInHandoff": true
+    }
+  ],
+  "implementation": {
+    "application": "Next.js mobile-first interactive prototype",
+    "currentJourney": "Work to Evening v0.2",
+    "visualSystem": {
+      "name": "Grounded Pulse v0.2",
+      "status": "Hypothesis"
+    },
+    "stateCheckIn": {
+      "model": "activation-valence plus SVAC",
+      "status": "Specification; not fully implemented"
+    },
+    "backend": {
+      "provider": "Supabase",
+      "status": "Planned only; not connected; no approved schema"
+    },
+    "hosting": {
+      "provider": "Vercel",
+      "project": "hale",
+      "productionTrigger": "merge to main through Git integration"
+    }
+  },
+  "governance": {
+    "parallelContextHubsAllowed": false,
+    "chatTranscriptIsSourceOfTruth": false,
+    "deploymentAuthorization": "explicit_current_chat_instruction_from_user_on_iphone",
+    "mergeAuthorization": "explicit_current_chat_instruction_from_user_on_iphone",
+    "weeklyReview": "Sunday 20:00 Europe/Berlin",
+    "rawInspirationRule": "Persist important originals in an approved durable project source; capture analysis and decisions in the existing Notion Inspiration Library."
+  }
+}
