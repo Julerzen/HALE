@@ -241,14 +241,14 @@
   ],
   "implementation": {
     "application": "Next.js mobile-first interactive prototype",
-    "currentJourney": "Work to Evening v0.2",
+    "currentJourney": "Work to Evening v0.3 preview candidate",
     "visualSystem": {
-      "name": "Grounded Pulse v0.2",
+      "name": "Grounded Pulse v0.3",
       "status": "Hypothesis"
     },
     "stateCheckIn": {
       "model": "activation-valence plus SVAC",
-      "status": "Specification; not fully implemented"
+      "status": "Implemented in draft; pending iPhone acceptance and main merge"
     },
     "backend": {
       "provider": "Supabase",

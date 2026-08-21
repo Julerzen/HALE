@@ -23,6 +23,9 @@ This register preserves the minimum set of decisions and explicitly labeled hypo
 | D-014 | Current state | Supabase is planned only; it is not connected and no schema is approved. | Do not claim persistence, accounts, or backend integration. |
 | D-015 | Decision | Important raw inspiration must live in an approved durable project source; analysis and decisions go into the existing Notion Inspiration Library. | A one-chat attachment is not a reliable long-term source. |
 | D-016 | Decision | Do not create parallel HALE context hubs. | Update the existing Operating System, handoff, manifest, and decision register. |
+| D-017 | Decision | The v0.3 acceptance path must expose optional check-in, activation–valence matrix, SVAC radar, curated overview, and immersive player before tailored methods are evaluated. | These surfaces are P0 release blockers and must be verified together on iPhone. |
+| D-018 | Hypothesis | Grounded Pulse v0.3 continues the dark, mystical threshold through warm sand, linen, travertine, smoked-wood, and clay-like surfaces. | Avoid pure-white screens, generic wellness cleanliness, copied Bali symbols, and any claim that this is final CI. |
+| D-019 | Decision | HALE must not present the same coherence exercise as the tailored method for Ruhe, Klarheit, and Aktivierung. | Ruhe may use a provisional 4-in/4-out coherence prototype; the methods for Klarheit, Aktivierung, Verbindung, and observation stay explicitly open until evaluated. |
 
 ## Amendment rule
 

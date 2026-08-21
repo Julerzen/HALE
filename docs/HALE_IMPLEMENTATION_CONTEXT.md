@@ -56,21 +56,32 @@ This separation is intentional: it is the honest technical boundary between proj
 
 ## Current implementation status
 
-The integrated system contains:
+GitHub `main` and production still contain v0.2:
 
 - a mobile-first interactive Work-to-Evening vertical slice;
 - an original HALE opening aperture made from two breathing surfaces and a central light seam;
-- choices for Ruhe, Klarheit, or Energie;
+- choices for Ruhe, Klarheit, or Energie, currently followed by an insufficiently differentiated practice;
 - a 5- or 10-minute entry, functional timer, pause state, and value-free reflection;
 - a provisional Grounded Pulse v0.2 visual hypothesis;
 - automated repository context validation, type checking, and production build;
 - a Vercel Git integration where merging `main` may trigger production.
 
+The v0.3 preview candidate, which is **not yet approved for `main` or production**, adds:
+
+- an optional, session-local activation–valence plus SVAC check-in using six neutral 0–10 inputs;
+- a continuous activation–valence matrix and an accessible four-axis SVAC radar;
+- explicit desired-direction selection followed by a curated overview and dedicated immersive player;
+- the Grounded Pulse v0.3 visual hypothesis with dark atmospheric continuity and warm sand, linen, travertine, smoked-wood, and clay-like material cues;
+- a provisional 4-in/4-out coherence practice only for Ruhe;
+- an explicit “method still open” state for Klarheit, Aktivierung, Verbindung, and observation so the prototype does not fake differentiation;
+- no persistence, backend, third-party analytics, third-party audio, or copied reference assets.
+
 Not yet implemented or approved:
 
 - final logo, colors, typography, icon system, motion system, or audio identity;
-- the complete activation–valence plus SVAC check-in;
-- a final content library, session taxonomy, or immersive player;
+- iPhone product acceptance of the v0.3 check-in, visualizations, overview, and player;
+- validated and safety-reviewed methods for Klarheit, Aktivierung, Verbindung, or observation;
+- a final content library or final session taxonomy;
 - a Supabase connection or approved database schema;
 - licensed production music or third-party poetry.
 

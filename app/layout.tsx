@@ -4,12 +4,12 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "HALE — Work to Evening",
-  description: "Ein interaktiver HALE-Prototyp für den bewussten Übergang vom Arbeitstag in den Abend.",
+  title: "HALE — Work to Evening v0.3",
+  description: "HALE Prototyp v0.3: optionaler State Check-in, Momentaufnahme und immersiver Übergang vom Arbeitstag in den Abend.",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#17191f",
+  themeColor: "#111310",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
