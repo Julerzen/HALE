@@ -81,6 +81,162 @@
       "pageId": "3c346ad5-a7ba-81a6-9e5d-f899aa2bcb24",
       "url": "https://app.notion.com/p/3c346ad5a7ba81a69e5df899aa2bcb24",
       "requiredInHandoff": true
+    },
+    {
+      "key": "technicalArchitecture",
+      "pageId": "3c346ad5-a7ba-8153-ba15-f5369ea02622",
+      "url": "https://app.notion.com/p/3c346ad5a7ba8153ba15f5369ea02622",
+      "requiredInHandoff": true
+    },
+    {
+      "key": "weeklyReviews",
+      "pageId": "3c346ad5-a7ba-81a1-8a6c-efcfd73a0a70",
+      "url": "https://app.notion.com/p/3c346ad5a7ba81a18a6cefcfd73a0a70",
+      "requiredInHandoff": true
+    },
+    {
+      "key": "competitorLandscape",
+      "pageId": "3c346ad5-a7ba-8107-8313-f570ab985c15",
+      "url": "https://app.notion.com/p/3c346ad5a7ba81078313f570ab985c15",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "breatheWithSandyAnalysis",
+      "pageId": "3c346ad5-a7ba-8188-a2e9-fa1f8aa8917a",
+      "url": "https://app.notion.com/p/3c346ad5a7ba8188a2e9fa1f8aa8917a",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "germanMarketOpportunities",
+      "pageId": "3c346ad5-a7ba-81c3-a00c-dab67e71196f",
+      "url": "https://app.notion.com/p/3c346ad5a7ba81c3a00cdab67e71196f",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "userNeedsAndPainPoints",
+      "pageId": "3c346ad5-a7ba-814c-847d-e746499c7117",
+      "url": "https://app.notion.com/p/3c346ad5a7ba814c847de746499c7117",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "researchAndLiteratureLibrary",
+      "pageId": "3c346ad5-a7ba-8174-9fdb-f5ae34455f1c",
+      "url": "https://app.notion.com/p/3c346ad5a7ba81749fdbf5ae34455f1c",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "brandStrategy",
+      "pageId": "3c346ad5-a7ba-8119-9395-ca9e11adaa93",
+      "url": "https://app.notion.com/p/3c346ad5a7ba81199395ca9e11adaa93",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "creativeTerritories",
+      "pageId": "3c346ad5-a7ba-818e-8057-dc74340a99fe",
+      "url": "https://app.notion.com/p/3c346ad5a7ba818e8057dc74340a99fe",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "moodboards",
+      "pageId": "3c346ad5-a7ba-817f-84b2-ce80949345b9",
+      "url": "https://app.notion.com/p/3c346ad5a7ba817f84b2ce80949345b9",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "brandBible",
+      "pageId": "3c346ad5-a7ba-8136-86ea-e1e28744f74e",
+      "url": "https://app.notion.com/p/3c346ad5a7ba813686eae1e28744f74e",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "brandDecisionLog",
+      "pageId": "3c346ad5-a7ba-819f-80f7-f338e4aaea83",
+      "url": "https://app.notion.com/p/3c346ad5a7ba819f80f7f338e4aaea83",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "touchpointMatrix",
+      "pageId": "3c346ad5-a7ba-81e0-9e93-df3040e2a2e1",
+      "url": "https://app.notion.com/p/3c346ad5a7ba81e09e93df3040e2a2e1",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "contentStrategy",
+      "pageId": "3c346ad5-a7ba-81e8-b764-d7cec63c8e35",
+      "url": "https://app.notion.com/p/3c346ad5a7ba81e8b764d7cec63c8e35",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "sessionTaxonomy",
+      "pageId": "3c346ad5-a7ba-8176-84e1-e093ce82ccf7",
+      "url": "https://app.notion.com/p/3c346ad5a7ba817684e1e093ce82ccf7",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "editorialGuidelines",
+      "pageId": "3c346ad5-a7ba-8196-b479-fc4711afdff3",
+      "url": "https://app.notion.com/p/3c346ad5a7ba8196b479fc4711afdff3",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "goldenNuggetTemplate",
+      "pageId": "3c346ad5-a7ba-815e-9bb6-dde7ae8f0d23",
+      "url": "https://app.notion.com/p/3c346ad5a7ba815e9bb6dde7ae8f0d23",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "contentProductionWorkflow",
+      "pageId": "3c346ad5-a7ba-8186-83c4-caa5e493cc4d",
+      "url": "https://app.notion.com/p/3c346ad5a7ba818683c4caa5e493cc4d",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "productVision",
+      "pageId": "3c346ad5-a7ba-8113-96d4-de8b64947916",
+      "url": "https://app.notion.com/p/3c346ad5a7ba811396d4de8b64947916",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "mvpScope",
+      "pageId": "3c346ad5-a7ba-81f4-bf1e-dfeb5daeaeb0",
+      "url": "https://app.notion.com/p/3c346ad5a7ba81f4bf1edfeb5daeaeb0",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "featureBacklog",
+      "pageId": "3c346ad5-a7ba-81e5-a47e-c801ee4c194d",
+      "url": "https://app.notion.com/p/3c346ad5a7ba81e5a47ec801ee4c194d",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "productRoadmap",
+      "pageId": "3c346ad5-a7ba-81b5-8a46-d5c6017d2c89",
+      "url": "https://app.notion.com/p/3c346ad5a7ba81b58a46d5c6017d2c89",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "dataAndContentModel",
+      "pageId": "3c346ad5-a7ba-81db-b081-d31e402cbe09",
+      "url": "https://app.notion.com/p/3c346ad5a7ba81dbb081d31e402cbe09",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "qualityAccessibilityAndPrivacy",
+      "pageId": "3c346ad5-a7ba-8169-894a-c72771013b30",
+      "url": "https://app.notion.com/p/3c346ad5a7ba8169894ac72771013b30",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "voiceAndFacilitationJourney",
+      "pageId": "3c346ad5-a7ba-81ff-b888-dd371a9aa4ff",
+      "url": "https://app.notion.com/p/3c346ad5a7ba81ffb888dd371a9aa4ff",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "personasDatabase",
+      "pageId": "c68d0399-c892-469e-9181-b24e288c669f",
+      "url": "https://app.notion.com/p/c68d0399c892469e9181b24e288c669f",
+      "requiredInHandoff": false
     }
   ],
   "implementation": {
