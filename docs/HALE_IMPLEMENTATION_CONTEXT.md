@@ -38,8 +38,10 @@ When a decision affects both strategy and implementation, Notion and GitHub must
 - [State check-in specification](https://app.notion.com/p/3c346ad5a7ba8138bf0ee64079e49bba)
 - [Inspiration Library](https://app.notion.com/p/3c346ad5a7ba814e86c9c3eb9fb90597)
 - [Safety & Claims](https://app.notion.com/p/3c346ad5a7ba81a69e5df899aa2bcb24)
+- [Technical Architecture](https://app.notion.com/p/3c346ad5a7ba8153ba15f5369ea02622)
+- [Weekly Reviews & Planning](https://app.notion.com/p/3c346ad5a7ba81a18a6cefcfd73a0a70)
 
-The exact IDs and machine roles are mirrored in `config/hale-context.json`.
+The exact IDs and machine roles for the complete HALE Notion structure are mirrored in `config/hale-context.json`. The Operating System remains the canonical index; agents fetch all pages affected by the task rather than loading unrelated documents indiscriminately.
 
 ## Cross-chat availability
 
