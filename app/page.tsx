@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-type Stage = "arrival" | "session" | "reflection";
+type Stage = "opening" | "arrival" | "session" | "reflection";
 type Direction = "calm" | "clarity" | "energy";
 
 const directions: Array<{
@@ -48,7 +48,7 @@ function formatTime(seconds: number) {
 }
 
 export default function Home() {
-  const [stage, setStage] = useState<Stage>("arrival");
+  const [stage, setStage] = useState<Stage>("opening");
   const [direction, setDirection] = useState<Direction>("calm");
   const [minutes, setMinutes] = useState(10);
   const [remainingSeconds, setRemainingSeconds] = useState(600);
@@ -92,7 +92,7 @@ export default function Home() {
   }
 
   function restart() {
-    setStage("arrival");
+    setStage("opening");
     setIsPlaying(false);
     setRemainingSeconds(minutes * 60);
     setReflection(null);
@@ -101,10 +101,43 @@ export default function Home() {
   return (
     <main className="prototype-shell">
       <section className="device" aria-label="HALE Work to Evening Prototyp">
-        <header className="topbar">
-          <button className="wordmark" type="button" onClick={restart}>HALE</button>
-          <span className="prototype-badge">Prototype 0.1</span>
-        </header>
+        {stage !== "opening" && (
+          <header className="topbar">
+            <button className="wordmark" type="button" onClick={restart}>HALE</button>
+            <span className="prototype-badge">Prototype 0.2</span>
+          </header>
+        )}
+
+        {stage === "opening" && (
+          <div className="opening-screen">
+            <div className="opening-atmosphere" aria-hidden="true">
+              <span className="atmosphere-field field-one" />
+              <span className="atmosphere-field field-two" />
+              <span className="atmosphere-grain" />
+            </div>
+
+            <div className="opening-brand">
+              <p>17:00 · Zwischen den Rollen</p>
+              <h1>HALE</h1>
+            </div>
+
+            <div className="aperture-space">
+              <div className="hale-aperture" aria-hidden="true">
+                <span className="aperture-side aperture-left" />
+                <span className="aperture-core" />
+                <span className="aperture-side aperture-right" />
+              </div>
+              <p>Einatmen. Ausatmen.<br />Dazwischen beginnt dein Abend.</p>
+            </div>
+
+            <div className="opening-entry">
+              <button type="button" onClick={() => setStage("arrival")}>
+                In den Zwischenraum <span aria-hidden="true">→</span>
+              </button>
+              <small>Original sound atmosphere folgt</small>
+            </div>
+          </div>
+        )}
 
         {stage === "arrival" && (
           <div className="screen arrival-screen">
@@ -226,7 +259,9 @@ export default function Home() {
           </div>
         )}
 
-        <footer className="bottom-note"><span>HALE / 2026</span><span>Feel what follows.</span></footer>
+        {stage !== "opening" && (
+          <footer className="bottom-note"><span>HALE / 2026</span><span>Feel what follows.</span></footer>
+        )}
       </section>
     </main>
   );
