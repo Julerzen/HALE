@@ -6,7 +6,7 @@
     "repository": "Julerzen/HALE",
     "defaultBranch": "main"
   },
-  "lastReconciled": "2026-08-21",
+  "lastReconciled": "2026-08-22",
   "authority": {
     "strategyAndRationale": "Notion",
     "technicalImplementation": "GitHub main",
@@ -241,7 +241,12 @@
   ],
   "implementation": {
     "application": "Next.js mobile-first interactive prototype",
-    "currentJourney": "Work to Evening v0.3 immersive practice-player preview candidate",
+    "currentJourney": "Work to Evening v0.3 cinematic-aperture preview candidate",
+    "brandDirection": {
+      "master": "AC4 Warm Horizon",
+      "companion": "AC1 Horizon",
+      "status": "Image-world decision; logo, typography, tokens, and full product integration remain in development"
+    },
     "visualSystem": {
       "name": "Grounded Pulse v0.3",
       "status": "Hypothesis"

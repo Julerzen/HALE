@@ -76,3 +76,20 @@ Use this checklist for every material change. A checked list records review; it 
 - [x] Deployed mobile browser flow for implementation commit `5dae602` is verified: Ruhe and Aktivierung reached the practice room, pause held the timer, disclosure opened, the original background loaded, and no app-origin browser errors were observed
 - [ ] iPhone product acceptance is passed for the exact new PR head
 - [ ] Explicit merge and production authorization is received for that exact commit
+
+## Review record · v0.3 one-shot Aperture prelude · 2026-08-22
+
+**Classification:** Draft implementation of D-022 (Hypothesis), aligned with the D-021 image-world decision. Not yet approved for `main` or production.
+
+- [x] Boot files, affected Notion pages, current `main`, draft PR #6, review threads, GitHub status, and Vercel production/preview state inspected
+- [x] AC4 Warm Horizon, AC1 Horizon, Brand Bible, Brand Decision Log, Design System, User Journey, Information Architecture, Breathe with Sandy analysis, and accessibility guidance reconciled
+- [x] Scope checked: one-shot fresh-load prelude only; the accepted v0.3 path after the start screen remains unchanged
+- [x] Brand guardrail checked: Aperture plus central seam, graphite depth, indirect warm light, no visible sun, circle portal, copied reference asset, or orange-brown wash
+- [x] Accessibility reviewed: the visual is decorative, screen readers receive a short status, underlying controls are disabled/hidden during the prelude, and reduced motion removes the camera pull
+- [x] Explicit current-chat request received from the user on iPhone to prepare deployment and merge
+- [x] Context gate, strict TypeScript, and optimized production build passed locally
+- [ ] Fresh Vercel preview for the exact new PR head is READY
+- [ ] Deployed mobile browser flow and animation frames for the exact new PR head are verified
+- [ ] iPhone product acceptance is passed for the exact new PR head after seeing the preview
+- [ ] Explicit post-preview merge confirmation is recorded for that exact commit
+- [ ] Production deployment and post-deploy smoke/error checks are verified

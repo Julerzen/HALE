@@ -1,7 +1,7 @@
 # HALE implementation context
 
 Status: binding cross-chat implementation handoff  
-Last reconciled: 2026-08-21  
+Last reconciled: 2026-08-22  
 Binding implementation branch: `main` after the approved integration merge
 
 ## Purpose
@@ -75,7 +75,11 @@ The v0.3 preview candidate, which is **not yet approved for `main` or production
 - a provisional 4-in/4-out coherence practice only for Ruhe;
 - an explicit “method still open” state for Klarheit, Aktivierung, Verbindung, and observation so the prototype does not fake differentiation;
 - a distinct post-start practice room with an original, project-owned architectural twilight background and the same two-sided HALE Aperture used in the opening;
+- a one-shot prelude on a fresh web-app load: only the HALE Aperture and central light seam are visible, the two surfaces open once, and a controlled upward camera pull enters the seam before revealing the existing start screen;
+- a reduced-motion alternative that removes the camera pull and uses a short static dissolve;
 - no persistence, backend, third-party analytics, third-party audio, or copied reference assets.
+
+The current canonical **image-world decision** in Notion is AC4 Warm Horizon as master plus AC1 Horizon as its softer companion atmosphere. The prototype prelude may already apply their graphite depth, indirect warm seam, emptiness, and opening motion grammar. This does **not** mean the full executable CI is complete: final Aperture geometry/logo, typography, exact color tokens, icons, audio, and the broader product conversion remain in development and require their own iPhone and brand-conformance gate.
 
 Not yet implemented or approved:
 
@@ -91,7 +95,7 @@ Never describe these items as complete.
 ## Required experience sequence
 
 1. **Threshold** — short transition out of everyday UI.
-2. **Arrival** — an original HALE sign breathes, pulses, or opens.
+2. **Arrival** — on a fresh load, the original HALE sign opens once around its light seam and the view passes through it before the start screen appears.
 3. **State check-in** — optional, low-friction, body-near questions.
 4. **Orientation** — neutral snapshot of current state.
 5. **Desired direction** — calm, clarity/focus, energy, connection, or observation.
@@ -111,6 +115,7 @@ Raw values remain session-local by default. Persistence requires an explicit pro
 ## Reference hierarchy
 
 - **Opening:** learn from the threshold feeling of Breathe with Sandy, but do not copy its sea, concentric circles, assets, or standard in-app dashboard.
+- **Opening motion:** AC4 Warm Horizon governs the visual grammar: graphite depth, a narrow indirect light seam, controlled opening and a single inward/upward pull. No visible sun, anatomy, circular portal, decorative loop, or orange-brown wash.
 - **Overview/navigation:** use Anima SoundScape Lab as a reference for hierarchy, scenario-led entry, atmospheric content cards, and progressive disclosure—not its assets, exact layout, typography, icons, or unsupported claims.
 - **Player:** explore an original full-screen HALE room with strong readability, one dominant start action, subordinate controls, and an interface that recedes during practice. The supplied lantern-player screenshot contributes only the principles of full-bleed atmosphere, information inside the scene, and progressive disclosure. Its photo, arrangement, icons, frequency display, copy, and distinctive execution are excluded.
 

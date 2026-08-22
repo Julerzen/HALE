@@ -1,7 +1,7 @@
 # HALE decision register
 
 Status: binding recovery mirror  
-Last reconciled: 2026-08-21
+Last reconciled: 2026-08-22
 
 This register preserves the minimum set of decisions and explicitly labeled hypotheses needed to recover HALE in a new chat. Detailed rationale remains in the canonical Notion pages; implementation remains binding on GitHub `main`.
 
@@ -27,6 +27,8 @@ This register preserves the minimum set of decisions and explicitly labeled hypo
 | D-018 | Hypothesis | Grounded Pulse v0.3 continues the dark, mystical threshold through warm sand, linen, travertine, smoked-wood, and clay-like surfaces. | Avoid pure-white screens, generic wellness cleanliness, copied Bali symbols, and any claim that this is final CI. |
 | D-019 | Decision | HALE must not present the same coherence exercise as the tailored method for Ruhe, Klarheit, and Aktivierung. | Ruhe may use a provisional 4-in/4-out coherence prototype; the methods for Klarheit, Aktivierung, Verbindung, and observation stay explicitly open until evaluated. |
 | D-020 | Hypothesis | After the start action, the practice room continues the opening's HALE Aperture over an original full-screen architectural twilight scene. | The supplied screenshot informs atmosphere, full-bleed hierarchy, and progressive disclosure only. Do not copy its image, layout, icons, frequency display, controls, or claims; keep method boundaries explicit. |
+| D-021 | Decision | AC4 Warm Horizon is HALE's master image world; AC1 Horizon is a softer companion atmosphere inside the same system. | Apply the same Aperture, layout, motion, overlay, component, icon, typography, and accessibility rules across both. Full executable CI remains incomplete until logo, type, tokens, and product surfaces pass their own gate. |
+| D-022 | Hypothesis | A fresh web-app load begins with a one-shot cinematic prelude showing only the HALE Aperture and its central light seam; the surfaces open and the view is pulled upward through the seam before the existing start screen appears. | Keep the movement singular and meaningful, not a decorative loop. Provide a short static dissolve for reduced motion and require exact-preview iPhone acceptance before production. |
 
 ## Amendment rule
 

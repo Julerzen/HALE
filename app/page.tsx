@@ -37,6 +37,7 @@ const progressByStage: Partial<Record<Stage, number>> = {
 
 export default function Home() {
   const [stage, setStage] = useState<Stage>("opening");
+  const [showPrelude, setShowPrelude] = useState(true);
   const [openingLeaving, setOpeningLeaving] = useState(false);
   const [activation, setActivation] = useState(5);
   const [valence, setValence] = useState(5);
@@ -56,6 +57,16 @@ export default function Home() {
   const elapsed = minutes * 60 - remainingSeconds;
   const cyclePosition = ((elapsed % 8) + 8) % 8;
   const breathPhase = cyclePosition < 4 ? "Einatmen" : "Ausatmen";
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const preludeTimer = window.setTimeout(
+      () => setShowPrelude(false),
+      reducedMotion ? 700 : 5200,
+    );
+
+    return () => window.clearTimeout(preludeTimer);
+  }, []);
 
   useEffect(() => {
     if (!isPlaying || stage !== "practice" || remainingSeconds <= 0) return;
@@ -127,7 +138,11 @@ export default function Home() {
         )}
 
         {stage === "opening" && (
-          <div className="opening-screen" data-leaving={openingLeaving}>
+          <div
+            className="opening-screen"
+            data-leaving={openingLeaving}
+            aria-hidden={showPrelude ? true : undefined}
+          >
             <div className="opening-atmosphere" aria-hidden="true">
               <span className="atmosphere-field field-one" />
               <span className="atmosphere-field field-two" />
@@ -143,10 +158,19 @@ export default function Home() {
               <p>Einatmen. Ausatmen.<br />Dazwischen beginnt dein Abend.</p>
             </div>
             <div className="opening-entry">
-              <button type="button" onClick={enterPrototype} disabled={openingLeaving}>
+              <button type="button" onClick={enterPrototype} disabled={openingLeaving || showPrelude}>
                 {openingLeaving ? "Der Raum öffnet sich" : "In den Zwischenraum"}<span aria-hidden="true">→</span>
               </button>
               <small>Original Sound Atmosphere folgt</small>
+            </div>
+          </div>
+        )}
+
+        {stage === "opening" && showPrelude && (
+          <div className="prelude-screen" role="status" aria-live="polite">
+            <span className="sr-only">HALE öffnet sich.</span>
+            <div className="prelude-camera" aria-hidden="true">
+              <HaleAperture className="prelude-hale-aperture" />
             </div>
           </div>
         )}

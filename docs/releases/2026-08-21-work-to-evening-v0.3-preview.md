@@ -8,14 +8,15 @@ Acceptance device: user's iPhone
 
 Repair the failed v0.2 iPhone product acceptance by making the complete core journey visible before choosing or evaluating tailored practices:
 
-1. atmospheric opening;
-2. optional activation–valence plus SVAC check-in;
-3. matrix and radar snapshot;
-4. desired direction;
-5. curated overview;
-6. dedicated player;
-7. distinct, image-led practice room with the opening aperture;
-8. value-free reflection.
+1. one-shot Aperture prelude;
+2. existing atmospheric start screen;
+3. optional activation–valence plus SVAC check-in;
+4. matrix and radar snapshot;
+5. desired direction;
+6. curated overview;
+7. dedicated player;
+8. distinct, image-led practice room with the opening aperture;
+9. value-free reflection.
 
 ## Implemented in this candidate
 
@@ -27,6 +28,8 @@ Repair the failed v0.2 iPhone product acceptance by making the complete core jou
 - One honest prototype session rather than a fictional content catalogue.
 - Immersive pre-session player with duration selection and a dominant start action.
 - A separate post-start practice room with a full-screen original background, repeated HALE Aperture, timer, progress, pause/resume, close, method disclosure, and reflection.
+- A one-shot opening prelude on a fresh load: no visible copy, wordmark, button, pulse ring, or dashboard—only the Aperture and central seam; the surfaces open, the virtual camera rises into the seam once, and the existing start screen is then revealed.
+- A reduced-motion path with no zoom or camera pull and a short static dissolve.
 - 4-in/4-out coherence is restricted to Ruhe and labeled provisional.
 - Other directions expose a neutral player test and state that their method is not yet defined.
 - Original generated HALE background plus original CSS atmosphere; no third-party image, audio, video, poetry, or copied layout.
@@ -49,6 +52,9 @@ The post-start player tests a less brown-heavy extension in charcoal, smoky oliv
 
 Before merge or production deployment, verify on the user's iPhone:
 
+- A fresh load begins with only the Aperture and light seam; no start-screen copy or control is visible before the transition.
+- The Aperture opens once, the inward/upward pull reads as entering the seam, and the existing start screen appears without a flash, blank frame, or accidental loop.
+- With iOS Reduce Motion enabled, the zoom/pull is absent and the static dissolve does not delay access.
 - Opening feels like a threshold and transitions reliably.
 - Check-in can be completed in roughly 30–60 seconds or skipped.
 - Sliders are comfortable to use; all values remain visible when navigating back.
@@ -94,6 +100,16 @@ Still required before merge: iPhone product acceptance for the exact final PR he
 - Kept the activation, clarity, connection, and observation methods explicitly open; no frequency display or unsupported effect claim was introduced.
 - `npm run check` passed locally after the refinement.
 - Local browser automation was unavailable because the packaged browser executable is absent; the deployed preview was therefore verified in the connected cloud browser before iPhone acceptance.
+
+## Opening prelude refinement · 22 August 2026
+
+- Reconciled the new request with AC4 Warm Horizon, AC1 Horizon, the Brand Bible, Brand Decision Log, Design System, Breathe with Sandy analysis, User Journey, Information Architecture, accessibility guidance, draft PR #6, and production state.
+- The first visible frame contains only the HALE Aperture and its narrow light seam.
+- The two surfaces open over one deliberate cycle; a single upward camera pull enters the seam and reveals the unchanged v0.3 start screen underneath.
+- The color treatment shifts away from the earlier brown cast toward graphite, mineral mushroom, linen light, and restrained warmth.
+- No audio, third-party asset, circular portal, visible sun, explanatory copy, or new claim is introduced.
+- This is a motion hypothesis inside the selected image-world direction, not approval of the final logo geometry or full CI.
+- `npm run check` passed locally on 22 August 2026 after the code and context updates.
 
 ## Merge state
 
