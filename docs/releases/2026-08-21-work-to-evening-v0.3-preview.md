@@ -110,6 +110,10 @@ Still required before merge: iPhone product acceptance for the exact final PR he
 - No audio, third-party asset, circular portal, visible sun, explanatory copy, or new claim is introduced.
 - This is a motion hypothesis inside the selected image-world direction, not approval of the final logo geometry or full CI.
 - `npm run check` passed locally on 22 August 2026 after the code and context updates.
+- Implementation commit `2c709b2875b65625c2e7893b166ee03a86c98673` reached READY on Vercel preview deployment `dpl_2BXdSbudD8YMUG93L25Pm5jbn5Sx`.
+- Deployed mobile-width browser verification captured the icon-only first frame, progressive Aperture opening, accelerated upward/forward seam pull, and clean hand-off to an enabled start screen.
+- The exact deployed code continued through check-in entry, skip path, direction, overview, dedicated player, and a running practice room with a decrementing timer.
+- No app-origin browser errors were observed; browser-extension metadata errors were excluded from the app result.
 
 ## Merge state
 

@@ -88,8 +88,8 @@ Use this checklist for every material change. A checked list records review; it 
 - [x] Accessibility reviewed: the visual is decorative, screen readers receive a short status, underlying controls are disabled/hidden during the prelude, and reduced motion removes the camera pull
 - [x] Explicit current-chat request received from the user on iPhone to prepare deployment and merge
 - [x] Context gate, strict TypeScript, and optimized production build passed locally
-- [ ] Fresh Vercel preview for the exact new PR head is READY
-- [ ] Deployed mobile browser flow and animation frames for the exact new PR head are verified
+- [x] Vercel preview for implementation commit `2c709b2` is READY (`dpl_2BXdSbudD8YMUG93L25Pm5jbn5Sx`)
+- [x] Deployed mobile browser verification passed for implementation commit `2c709b2`: first frame, opening state, seam pull, clean start-screen reveal, check-in entry, skip path, overview, player, and running practice room; no app-origin browser errors observed
 - [ ] iPhone product acceptance is passed for the exact new PR head after seeing the preview
 - [ ] Explicit post-preview merge confirmation is recorded for that exact commit
 - [ ] Production deployment and post-deploy smoke/error checks are verified
