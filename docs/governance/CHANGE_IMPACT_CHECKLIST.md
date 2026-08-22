@@ -93,3 +93,22 @@ Use this checklist for every material change. A checked list records review; it 
 - [ ] iPhone product acceptance is passed for the exact new PR head after seeing the preview
 - [ ] Explicit post-preview merge confirmation is recorded for that exact commit
 - [ ] Production deployment and post-deploy smoke/error checks are verified
+
+## Review record · v0.3 iPhone rejection refinement · 2026-08-22
+
+**Classification:** Draft implementation of D-023 and D-024 (Hypotheses), constrained by D-021 (Decision). The previous exact head failed iPhone acceptance. Not approved for `main` or production.
+
+- [x] Failed acceptance recorded for exact prior head `4d7c2b3a`; `main` and production confirmed unchanged on `6cf1e77`
+- [x] Boot files, AC4 Warm Horizon, Brand Bible, Brand Decision Log, Design System, User Journey, quality guidance, draft PR #6, review threads, and prior READY preview reconciled
+- [x] Annotated screenshot translated into hierarchy requirements; the screenshot itself and its distinctive UI are not shipped
+- [x] Motion scope checked: approximately 3.4 seconds, continuous center pull, one non-strobing full-screen light bloom, and static reduced-motion dissolve
+- [x] Practice scope checked: enlarged centered Aperture, dominant centered play/pause, bottom method/status/progress, and collapsed upward-opening session information
+- [x] Existing safety boundary retained: Ruhe alone uses provisional 4-in/4-out; other methods remain explicitly open; close and finish remain reachable
+- [x] Background asset provenance unchanged; the original project-owned image is only brightened through presentation CSS
+- [x] Strict TypeScript and optimized Next.js production build passed locally
+- [x] Full `npm run check` passes after context reconciliation
+- [ ] New exact preview deployment is READY and mapped to the new PR head
+- [ ] Deployed mobile browser verifies intro checkpoints, player hierarchy, disclosure, timer, pause/resume, and zero app-origin errors
+- [ ] iPhone product acceptance is passed for the exact new PR head
+- [ ] Explicit post-preview merge confirmation is recorded for that exact commit
+- [ ] Production deployment and post-deploy smoke/error checks are verified

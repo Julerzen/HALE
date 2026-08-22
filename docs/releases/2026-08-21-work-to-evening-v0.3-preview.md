@@ -53,7 +53,7 @@ The post-start player tests a less brown-heavy extension in charcoal, smoky oliv
 Before merge or production deployment, verify on the user's iPhone:
 
 - A fresh load begins with only the Aperture and light seam; no start-screen copy or control is visible before the transition.
-- The Aperture opens once, the inward/upward pull reads as entering the seam, and the existing start screen appears without a flash, blank frame, or accidental loop.
+- The Aperture is clearly legible before one short, smooth center pull enters the seam; one intentional full-screen light bloom completes the hand-off without a blank frame, strobe, jerk, or accidental loop.
 - With iOS Reduce Motion enabled, the zoom/pull is absent and the static dissolve does not delay access.
 - Opening feels like a threshold and transitions reliably.
 - Check-in can be completed in roughly 30–60 seconds or skipped.
@@ -64,6 +64,8 @@ Before merge or production deployment, verify on the user's iPhone:
 - Player hierarchy, timing, pause, close, and reflection work.
 - Pressing the start action opens a visually distinct full-screen practice room rather than continuing on the pre-session detail screen.
 - The practice room visibly reuses the two-sided HALE Aperture from the opening and keeps text readable over the original background.
+- The enlarged Aperture occupies the visual center, the play/pause control is dominant and centered below it, and the original background is visibly about 20% brighter than the rejected preview.
+- Method, status, and progress sit at the bottom. “Zwischenraum”, the session description, and the method note are absent from the default practice view and appear only when “Über diese Session” is expanded upward.
 - Pause/resume holds the timer, the progress indicator remains accurate, details are accessible, and short iPhone heights can scroll without clipped controls.
 - Ruhe is the only direction showing the provisional coherence method.
 - Klarheit and Aktivierung never claim to have a tailored method in this release.
@@ -114,6 +116,17 @@ Still required before merge: iPhone product acceptance for the exact final PR he
 - Deployed mobile-width browser verification captured the icon-only first frame, progressive Aperture opening, accelerated upward/forward seam pull, and clean hand-off to an enabled start screen.
 - The exact deployed code continued through check-in entry, skip path, direction, overview, dedicated player, and a running practice room with a decrementing timer.
 - No app-origin browser errors were observed; browser-extension metadata errors were excluded from the app result.
+
+## iPhone acceptance iteration 2 · 22 August 2026
+
+- The exact prior preview head `4d7c2b3a073689d8a7ec461150eb4d2583fea38d` did **not** pass iPhone product acceptance. Its READY deployment remains historical technical evidence only.
+- The intro timing is reduced from 5.2 seconds to approximately 3.4 seconds. Intermediate scale checkpoints replace the late jump so the pull accelerates continuously into the exact center seam.
+- AC4 Warm Horizon now appears in the intro as quiet graphite architecture, a restrained lower horizon, mineral surfaces, and indirect linen light; the Aperture remains the only semantic foreground object.
+- One full-screen light bloom completes the transition. It is a single fade, not a strobe; iOS Reduce Motion receives no zoom or flash.
+- In the practice room the original project-owned background is presented at roughly 20% higher brightness, the Aperture is substantially larger and centered, and play/pause becomes the dominant centered control.
+- The former static “Zwischenraum” block is removed from the default view. Title, description, and method note now live in “Über diese Session”, which opens upward from the bottom information area.
+- Method, status, and progress move below the controls. Safe close, finish, pause/resume, timer semantics, method boundaries, and short-height scrolling remain intact.
+- This iteration is D-023/D-024 draft implementation. It is neither final motion/CI nor approved for `main` or production until the exact new preview passes on the user's iPhone.
 
 ## Merge state
 

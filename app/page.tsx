@@ -62,7 +62,7 @@ export default function Home() {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const preludeTimer = window.setTimeout(
       () => setShowPrelude(false),
-      reducedMotion ? 700 : 5200,
+      reducedMotion ? 650 : 3400,
     );
 
     return () => window.clearTimeout(preludeTimer);
@@ -169,6 +169,12 @@ export default function Home() {
         {stage === "opening" && showPrelude && (
           <div className="prelude-screen" role="status" aria-live="polite">
             <span className="sr-only">HALE öffnet sich.</span>
+            <div className="prelude-architecture" aria-hidden="true">
+              <span className="prelude-plane prelude-plane-left" />
+              <span className="prelude-plane prelude-plane-right" />
+              <span className="prelude-horizon" />
+              <span className="prelude-floor" />
+            </div>
             <div className="prelude-camera" aria-hidden="true">
               <HaleAperture className="prelude-hale-aperture" />
             </div>
