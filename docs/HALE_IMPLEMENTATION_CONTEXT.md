@@ -82,6 +82,8 @@ The v0.3 preview candidate, which is **not yet approved for `main` or production
 
 The earlier exact preview head `4d7c2b3a073689d8a7ec461150eb4d2583fea38d` failed iPhone product acceptance on 2026-08-22. Its 5.2-second pull and previous practice hierarchy are historical draft evidence, not the current acceptance target. `main` and production remain on v0.2 while the faster motion and reordered practice room are reviewed in the draft PR.
 
+The current implementation candidate is commit `72fdfcb99654ba3b9c6f360528ee45a6584a0e91` in draft PR #6. Vercel preview deployment `dpl_12Kneq84vRi4XzZL2gY1eirMSn7i` is READY; local and GitHub context gates, strict TypeScript, production build, deployed mobile core flow, timing checkpoints, player hierarchy, pause/resume, disclosure behavior, method boundary, and runtime-error checks passed. This is technical evidence only. Exact-link iPhone product acceptance remains required before any merge.
+
 The current canonical **image-world decision** in Notion is AC4 Warm Horizon as master plus AC1 Horizon as its softer companion atmosphere. The prototype prelude may already apply their graphite depth, indirect warm seam, emptiness, and opening motion grammar. This does **not** mean the full executable CI is complete: final Aperture geometry/logo, typography, exact color tokens, icons, audio, and the broader product conversion remain in development and require their own iPhone and brand-conformance gate.
 
 Not yet implemented or approved:

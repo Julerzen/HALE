@@ -127,6 +127,13 @@ Still required before merge: iPhone product acceptance for the exact final PR he
 - The former static “Zwischenraum” block is removed from the default view. Title, description, and method note now live in “Über diese Session”, which opens upward from the bottom information area.
 - Method, status, and progress move below the controls. Safe close, finish, pause/resume, timer semantics, method boundaries, and short-height scrolling remain intact.
 - This iteration is D-023/D-024 draft implementation. It is neither final motion/CI nor approved for `main` or production until the exact new preview passes on the user's iPhone.
+- `npm run check` passed after code and context reconciliation: 35 Notion sources, five boot files, strict TypeScript, and optimized Next.js build.
+- Implementation commit `72fdfcb99654ba3b9c6f360528ee45a6584a0e91` reached READY on Vercel preview deployment `dpl_12Kneq84vRi4XzZL2gY1eirMSn7i`; GitHub's Vercel status and HALE context workflow succeeded and no review threads remain open.
+- Deployed intro sampling confirmed continuous scale progression from 0.88 through 1.16, 1.48, 3.62, 4.86, 8.84, and 13.13 before reveal; the single full-screen bloom rose once to 0.98 opacity and then dissolved. The opening stayed hidden and disabled during the prelude and became enabled after hand-off.
+- Deployed practice measurements confirmed a 172 × 282 centered Aperture, an 88 × 88 play/pause control centered within five pixels of the screen centerline, the bottom information stack, and an initially closed 50-pixel disclosure whose 196-pixel content opens above its summary.
+- Pause held the timer at 8:20 for the verification interval and resume advanced it to 8:19. The activation route retained `Methodik noch offen` and `Natürlich atmen`; Ruhe alone retained provisional 4-in/4-out.
+- Vercel reported no runtime errors. No app-origin browser errors were observed; Vercel-login, Google identity, and browser-extension messages were excluded from the app result.
+- The affected Design System, User Journey, Quality, Implementation Plan, and Weekly Review pages were synchronized in Notion.
 
 ## Merge state
 

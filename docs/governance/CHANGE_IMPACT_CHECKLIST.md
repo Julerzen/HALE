@@ -107,8 +107,11 @@ Use this checklist for every material change. A checked list records review; it 
 - [x] Background asset provenance unchanged; the original project-owned image is only brightened through presentation CSS
 - [x] Strict TypeScript and optimized Next.js production build passed locally
 - [x] Full `npm run check` passes after context reconciliation
-- [ ] New exact preview deployment is READY and mapped to the new PR head
-- [ ] Deployed mobile browser verifies intro checkpoints, player hierarchy, disclosure, timer, pause/resume, and zero app-origin errors
+- [x] Vercel preview for implementation commit `72fdfcb` is READY and exact-SHA mapped (`dpl_12Kneq84vRi4XzZL2gY1eirMSn7i`)
+- [x] GitHub Vercel status and HALE context workflow succeeded; review threads remain empty; Vercel reports no runtime errors
+- [x] Deployed mobile browser verified progressive intro transforms and one full-screen light bloom, clean reveal, core flow, 172 × 282 Aperture, centered 88 × 88 play/pause, bottom information order, clipped default copy, upward-open disclosure, timer hold/resume, and the open-method activation state
+- [x] No app-origin browser errors observed; Vercel-login and browser-extension messages were excluded from the app result
+- [x] Design System, User Journey, Quality, Implementation Plan, and Weekly Review pages synchronized in Notion
 - [ ] iPhone product acceptance is passed for the exact new PR head
 - [ ] Explicit post-preview merge confirmation is recorded for that exact commit
 - [ ] Production deployment and post-deploy smoke/error checks are verified
