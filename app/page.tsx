@@ -178,7 +178,7 @@ export default function Home() {
             <p className="lead">Eine kurze Momentaufnahme kann dir helfen, die passende Richtung zu wählen. Sie bewertet nichts und wird nicht gespeichert.</p>
             <div className="privacy-note">
               <span aria-hidden="true">◎</span>
-              <p><strong>Nur für diesen Moment</strong>Deine Angaben bleiben in dieser Sitzung und verschwinden beim Neuladen.</p>
+              <p><strong>Nur für diesen Moment</strong>Deine Angaben bleiben nur in diesem Durchlauf. Neustart oder Neuladen verwirft sie.</p>
             </div>
             <div className="screen-actions push-bottom">
               <button className="primary-action" type="button" onClick={() => setStage("activation")}>Zustand einordnen <span aria-hidden="true">→</span></button>

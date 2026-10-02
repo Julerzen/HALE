@@ -127,7 +127,7 @@ Use this checklist for every material change. A checked list records review; it 
 - [x] Existing Opening and original image unchanged; no new third-party media, backend, accounts or analytics
 - [x] Off-app store/social/event/packaging surfaces reviewed as unaffected; no external messages sent
 - [x] Pure elapsed-clock/method scenarios and context gate logic exercised in tool runtime
-- [x] 17 affected existing Notion pages updated and refetched; draft/release/human-outcome boundaries retained
+- [x] 20 affected existing Notion pages updated and refetched; draft/release/human-outcome boundaries retained
 - [ ] npm context/test/types/build and fresh dependency audit pass for this candidate
 - [ ] Mobile Chromium/WebKit browser checks pass for this candidate
 - [ ] Candidate preview READY and exact-SHA mapped; review threads/checks clear
