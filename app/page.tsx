@@ -1,265 +1,331 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { StateScale, SvacCheckIn } from "./components/check-in";
+import { HaleAperture } from "./components/hale-aperture";
+import { PracticePlayer } from "./components/practice-player";
+import { SessionPlayer } from "./components/session-player";
+import { ActivationValenceMatrix, SvacRadar } from "./components/state-visuals";
+import {
+  directions,
+  initialSvac,
+  reflections,
+  type DirectionId,
+  type SvacKey,
+  type SvacValues,
+} from "./prototype-data";
 
-type Stage = "opening" | "arrival" | "session" | "reflection";
-type Direction = "calm" | "clarity" | "energy";
+type Stage =
+  | "opening"
+  | "checkin-intro"
+  | "activation"
+  | "valence"
+  | "svac"
+  | "snapshot"
+  | "direction"
+  | "overview"
+  | "player"
+  | "practice"
+  | "reflection";
 
-const directions: Array<{
-  id: Direction;
-  label: string;
-  eyebrow: string;
-  description: string;
-  rhythm: string;
-  cue: string;
-}> = [
-  {
-    id: "calm",
-    label: "Ruhe",
-    eyebrow: "Loslassen",
-    description: "Ich möchte den Arbeitstag leiser werden lassen.",
-    rhythm: "4 ein · 6 aus",
-    cue: "Lass die Ausatmung etwas länger werden. Ohne Druck.",
-  },
-  {
-    id: "clarity",
-    label: "Klarheit",
-    eyebrow: "Ankommen",
-    description: "Ich möchte wieder wahrnehmen, was ich jetzt brauche.",
-    rhythm: "4 ein · 4 aus",
-    cue: "Atme gleichmäßig. Spüre den Moment zwischen den Aufgaben.",
-  },
-  {
-    id: "energy",
-    label: "Energie",
-    eyebrow: "Ausrichten",
-    description: "Ich möchte bewusst und wach in den Abend gehen.",
-    rhythm: "4 ein · 4 aus",
-    cue: "Richte dich auf. Atme ruhig, präsent und ohne zu forcieren.",
-  },
-];
-
-const reflections = ["Ruhiger", "Klarer", "Verbundener", "Noch gleich"];
-
-function formatTime(seconds: number) {
-  const minutes = Math.floor(seconds / 60);
-  const rest = seconds % 60;
-  return `${minutes}:${rest.toString().padStart(2, "0")}`;
-}
+const progressByStage: Partial<Record<Stage, number>> = {
+  activation: 1,
+  valence: 2,
+  svac: 3,
+  snapshot: 4,
+};
 
 export default function Home() {
   const [stage, setStage] = useState<Stage>("opening");
-  const [direction, setDirection] = useState<Direction>("calm");
-  const [minutes, setMinutes] = useState(10);
-  const [remainingSeconds, setRemainingSeconds] = useState(600);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [showPrelude, setShowPrelude] = useState(true);
+  const [openingLeaving, setOpeningLeaving] = useState(false);
+  const [activation, setActivation] = useState(5);
+  const [valence, setValence] = useState(5);
+  const [svac, setSvac] = useState<SvacValues>(initialSvac);
+  const [checkInCompleted, setCheckInCompleted] = useState(false);
+  const [direction, setDirection] = useState<DirectionId>("calm");
+  const minutes = 5;
+  const deviceRef = useRef<HTMLElement>(null);
   const [reflection, setReflection] = useState<string | null>(null);
 
   const activeDirection = useMemo(
     () => directions.find((item) => item.id === direction) ?? directions[0],
     [direction],
   );
+  useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const preludeTimer = window.setTimeout(
+      () => setShowPrelude(false),
+      reducedMotion ? 650 : 3400,
+    );
 
-  const elapsed = minutes * 60 - remainingSeconds;
-  const cyclePosition = ((elapsed % 10) + 10) % 10;
-  const breathPhase = cyclePosition < 4 ? "Einatmen" : "Ausatmen";
+    return () => window.clearTimeout(preludeTimer);
+  }, []);
 
   useEffect(() => {
-    if (!isPlaying || stage !== "session" || remainingSeconds <= 0) return;
-    const timer = window.setInterval(() => {
-      setRemainingSeconds((current) => Math.max(0, current - 1));
-    }, 1000);
-    return () => window.clearInterval(timer);
-  }, [isPlaying, remainingSeconds, stage]);
+    if (showPrelude) return;
+    const heading = deviceRef.current?.querySelector<HTMLElement>("h1");
+    heading?.focus({ preventScroll: true });
+    deviceRef.current?.querySelector(".screen")?.scrollTo(0, 0);
+  }, [stage, showPrelude]);
 
-  useEffect(() => {
-    if (stage === "session" && remainingSeconds === 0) {
-      setIsPlaying(false);
-      setStage("reflection");
-    }
-  }, [remainingSeconds, stage]);
-
-  function beginSession() {
-    setRemainingSeconds(minutes * 60);
-    setIsPlaying(true);
-    setReflection(null);
-    setStage("session");
+  function enterPrototype() {
+    setOpeningLeaving(true);
+    window.setTimeout(() => {
+      setStage("checkin-intro");
+      setOpeningLeaving(false);
+    }, 650);
   }
 
-  function finishSession() {
-    setIsPlaying(false);
+  function updateSvac(key: SvacKey, value: number) {
+    setSvac((current) => ({ ...current, [key]: value }));
+  }
+
+  function completeCheckIn() {
+    setCheckInCompleted(true);
+    setStage("snapshot");
+  }
+
+  function skipCheckIn() {
+    setCheckInCompleted(false);
+    setActivation(5);
+    setValence(5);
+    setSvac({ ...initialSvac });
+    setStage("direction");
+  }
+
+  function beginPractice() {
+    setReflection(null);
+    setStage("practice");
+  }
+
+  function finishPractice() {
     setStage("reflection");
   }
 
   function restart() {
     setStage("opening");
-    setIsPlaying(false);
-    setRemainingSeconds(minutes * 60);
+    setOpeningLeaving(false);
+    setActivation(5);
+    setValence(5);
+    setSvac({ ...initialSvac });
+    setCheckInCompleted(false);
+    setDirection("calm");
     setReflection(null);
   }
 
+  const progress = progressByStage[stage];
+
   return (
     <main className="prototype-shell">
-      <section className="device" aria-label="HALE Work to Evening Prototyp">
-        {stage !== "opening" && (
+      <section ref={deviceRef} className="device" aria-label="HALE Work to Evening Prototyp v0.3.1">
+        {stage !== "opening" && stage !== "player" && stage !== "practice" && (
           <header className="topbar">
-            <button className="wordmark" type="button" onClick={restart}>HALE</button>
-            <span className="prototype-badge">Prototype 0.2</span>
+            <button className="wordmark" type="button" onClick={restart} aria-label="HALE Startseite">HALE</button>
+            <span className="prototype-badge">Prototype 0.3.1</span>
           </header>
         )}
 
         {stage === "opening" && (
-          <div className="opening-screen">
+          <div
+            className="opening-screen"
+            data-leaving={openingLeaving}
+            aria-hidden={showPrelude ? true : undefined}
+          >
             <div className="opening-atmosphere" aria-hidden="true">
               <span className="atmosphere-field field-one" />
               <span className="atmosphere-field field-two" />
               <span className="atmosphere-grain" />
             </div>
-
             <div className="opening-brand">
               <p>17:00 · Zwischen den Rollen</p>
-              <h1>HALE</h1>
+              <h1 tabIndex={-1}>HALE</h1>
             </div>
-
             <div className="aperture-space">
-              <div className="hale-aperture" aria-hidden="true">
-                <span className="aperture-side aperture-left" />
-                <span className="aperture-core" />
-                <span className="aperture-side aperture-right" />
-              </div>
+              <div className="pulse-field" aria-hidden="true"><i /><i /><i /></div>
+              <HaleAperture />
               <p>Einatmen. Ausatmen.<br />Dazwischen beginnt dein Abend.</p>
             </div>
-
             <div className="opening-entry">
-              <button type="button" onClick={() => setStage("arrival")}>
-                In den Zwischenraum <span aria-hidden="true">→</span>
+              <button type="button" onClick={enterPrototype} disabled={openingLeaving || showPrelude}>
+                {openingLeaving ? "Der Raum öffnet sich" : "In den Zwischenraum"}<span aria-hidden="true">→</span>
               </button>
-              <small>Original sound atmosphere folgt</small>
+              <small>Original Sound Atmosphere folgt</small>
             </div>
           </div>
         )}
 
-        {stage === "arrival" && (
-          <div className="screen arrival-screen">
-            <div className="intro">
-              <p className="kicker">Work → Evening</p>
-              <h1>Der Arbeitstag ist vorbei. Wie möchtest du in deinen Abend gehen?</h1>
-              <p className="lead">Kein weiterer Punkt auf deiner Liste. Zehn Minuten zwischen dem, was war, und dem, was jetzt beginnt.</p>
+        {stage === "opening" && showPrelude && (
+          <div className="prelude-screen" role="status" aria-live="polite">
+            <span className="sr-only">HALE öffnet sich.</span>
+            <div className="prelude-architecture" aria-hidden="true">
+              <span className="prelude-plane prelude-plane-left" />
+              <span className="prelude-plane prelude-plane-right" />
+              <span className="prelude-horizon" />
+              <span className="prelude-floor" />
             </div>
-
-            <fieldset className="choice-group">
-              <legend>Was brauchst du gerade?</legend>
-              <div className="direction-grid">
-                {directions.map((item, index) => (
-                  <button
-                    className="direction-card"
-                    data-selected={direction === item.id}
-                    key={item.id}
-                    onClick={() => setDirection(item.id)}
-                    type="button"
-                    aria-pressed={direction === item.id}
-                  >
-                    <span className="direction-index">0{index + 1}</span>
-                    <span className="direction-eyebrow">{item.eyebrow}</span>
-                    <strong>{item.label}</strong>
-                    <small>{item.description}</small>
-                  </button>
-                ))}
-              </div>
-            </fieldset>
-
-            <div className="duration-row">
-              <span>Zeit</span>
-              <div className="segmented" aria-label="Dauer auswählen">
-                {[5, 10].map((duration) => (
-                  <button
-                    key={duration}
-                    type="button"
-                    data-selected={minutes === duration}
-                    aria-pressed={minutes === duration}
-                    onClick={() => setMinutes(duration)}
-                  >
-                    {duration} Min
-                  </button>
-                ))}
-              </div>
+            <div className="prelude-camera" aria-hidden="true">
+              <HaleAperture className="prelude-hale-aperture" />
             </div>
-
-            <button className="primary-action" type="button" onClick={beginSession}>
-              Übergang beginnen <span aria-hidden="true">↗</span>
-            </button>
-            <p className="microcopy">Atme immer angenehm. Pausiere, wenn dir unwohl oder schwindelig wird.</p>
           </div>
         )}
 
-        {stage === "session" && (
-          <div className="screen session-screen">
-            <div className="session-meta">
-              <div>
-                <p className="kicker">Work → Evening · {activeDirection.label}</p>
-                <h1>Zwischenraum</h1>
-              </div>
-              <span className="timer" aria-label={`${formatTime(remainingSeconds)} verbleibend`}>
-                {formatTime(remainingSeconds)}
+        {stage === "checkin-intro" && (
+          <div className="screen checkin-intro-screen">
+            <div className="material-orbit" aria-hidden="true"><span /><i /></div>
+            <p className="kicker">Optionaler Check-in · ca. 45 Sek.</p>
+            <h1 tabIndex={-1}>Wo bist du gerade?</h1>
+            <p className="lead">Eine kurze Momentaufnahme kann dir helfen, die passende Richtung zu wählen. Sie bewertet nichts und wird nicht gespeichert.</p>
+            <div className="privacy-note">
+              <span aria-hidden="true">◎</span>
+              <p><strong>Nur für diesen Moment</strong>Deine Angaben bleiben nur in diesem Durchlauf. Neustart oder Neuladen verwirft sie.</p>
+            </div>
+            <div className="screen-actions push-bottom">
+              <button className="primary-action" type="button" onClick={() => setStage("activation")}>Zustand einordnen <span aria-hidden="true">→</span></button>
+              <button className="text-action" type="button" onClick={skipCheckIn}>Ohne Check-in weiter</button>
+            </div>
+          </div>
+        )}
+
+        {progress && (
+          <div className="checkin-progress" aria-label={`Check-in Schritt ${progress} von 4`}>
+            <div>{[1, 2, 3, 4].map((step) => <span key={step} data-active={step <= progress} />)}</div>
+            <small>{progress}/4</small>
+          </div>
+        )}
+
+        {stage === "activation" && (
+          <div className="screen scale-screen">
+            <p className="kicker">Activation</p>
+            <h1 tabIndex={-1}>Wie viel Energie ist gerade da?</h1>
+            <p className="lead">Nicht gut oder schlecht – nur wenig oder viel Aktivierung in diesem Moment.</p>
+            <div className="single-scale-wrap">
+              <StateScale id="activation" label="Aktivierung" low="sehr wenig" high="sehr viel" value={activation} onChange={setActivation} />
+            </div>
+            <div className="screen-actions push-bottom split-actions">
+              <button className="secondary-action" type="button" onClick={() => setStage("checkin-intro")}>Zurück</button>
+              <button className="primary-action" type="button" onClick={() => setStage("valence")}>Weiter <span aria-hidden="true">→</span></button>
+            </div>
+            <button className="text-action" type="button" onClick={skipCheckIn}>Check-in überspringen</button>
+          </div>
+        )}
+
+        {stage === "valence" && (
+          <div className="screen scale-screen">
+            <p className="kicker">Valence</p>
+            <h1 tabIndex={-1}>Wie fühlt sich dieser Moment an?</h1>
+            <p className="lead">Auch hier gibt es keine richtige Antwort. Ordne nur dein gegenwärtiges Erleben ein.</p>
+            <div className="single-scale-wrap">
+              <StateScale id="valence" label="Erleben" low="sehr unangenehm" high="sehr angenehm" value={valence} onChange={setValence} />
+            </div>
+            <div className="screen-actions push-bottom split-actions">
+              <button className="secondary-action" type="button" onClick={() => setStage("activation")}>Zurück</button>
+              <button className="primary-action" type="button" onClick={() => setStage("svac")}>Weiter <span aria-hidden="true">→</span></button>
+            </div>
+            <button className="text-action" type="button" onClick={skipCheckIn}>Check-in überspringen</button>
+          </div>
+        )}
+
+        {stage === "svac" && (
+          <div className="screen svac-screen">
+            <p className="kicker">SVAC · vier Perspektiven</p>
+            <h1 tabIndex={-1}>Was ist gerade spürbar?</h1>
+            <p className="lead">Eine grobe Einschätzung reicht. Du kannst jede Angabe jederzeit verändern.</p>
+            <SvacCheckIn values={svac} onChange={updateSvac} />
+            <div className="screen-actions split-actions">
+              <button className="secondary-action" type="button" onClick={() => setStage("valence")}>Zurück</button>
+              <button className="primary-action" type="button" onClick={completeCheckIn}>Moment ansehen <span aria-hidden="true">→</span></button>
+            </div>
+            <button className="text-action" type="button" onClick={skipCheckIn}>Check-in überspringen</button>
+          </div>
+        )}
+
+        {stage === "snapshot" && (
+          <div className="screen snapshot-screen">
+            <p className="kicker">Dein Check-in</p>
+            <h1 tabIndex={-1}>So ist es gerade.</h1>
+            <p className="lead">Keine Diagnose und kein Ergebnis. Zwei Ansichten auf denselben Moment.</p>
+            <div className="visual-stack">
+              <ActivationValenceMatrix activation={activation} valence={valence} />
+              <SvacRadar values={svac} />
+            </div>
+            <div className="screen-actions split-actions">
+              <button className="secondary-action" type="button" onClick={() => setStage("svac")}>Anpassen</button>
+              <button className="primary-action" type="button" onClick={() => setStage("direction")}>Richtung wählen <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+        )}
+
+        {stage === "direction" && (
+          <div className="screen direction-screen">
+            <p className="kicker">Deine Richtung</p>
+            <h1 tabIndex={-1}>Wie möchtest du in den Abend gehen?</h1>
+            <p className="lead">Wähle eine Absicht, nicht die „richtige“ Lösung.</p>
+            {checkInCompleted && <button className="snapshot-link" type="button" onClick={() => setStage("snapshot")}><span>Deine Momentaufnahme</span><strong>{activation}/10 Energie · {valence}/10 Erleben</strong><i aria-hidden="true">↗</i></button>}
+            <div className="direction-list" role="group" aria-label="Gewünschte Richtung">
+              {directions.map((item, index) => (
+                <button key={item.id} type="button" data-selected={direction === item.id} aria-pressed={direction === item.id} onClick={() => setDirection(item.id)}>
+                  <span className="direction-index">0{index + 1}</span>
+                  <span><small>{item.eyebrow}</small><strong>{item.label}</strong><span className="direction-description">{item.description}</span></span>
+                  <i aria-hidden="true">{direction === item.id ? "●" : "○"}</i>
+                </button>
+              ))}
+            </div>
+            <button className="primary-action" type="button" onClick={() => setStage("overview")}>Passende Räume ansehen <span aria-hidden="true">→</span></button>
+          </div>
+        )}
+
+        {stage === "overview" && (
+          <div className="screen overview-screen">
+            <div className="overview-heading">
+              <div><p className="kicker">Für deinen Übergang</p><h1 tabIndex={-1}>Ein Raum für {activeDirection.label}.</h1></div>
+              <button className="text-action" type="button" onClick={() => setStage("direction")}>Ändern</button>
+            </div>
+            <button className="featured-session" type="button" onClick={() => setStage("player")}>
+              <span className="session-art" aria-hidden="true"><i /><i /><i /></span>
+              <span className="session-card-copy">
+                <small>HALE Original · {minutes} Min.</small>
+                <strong>Zwischenraum</strong>
+                <span className="session-description">Vom Arbeitsmodus in einen offenen Abend.</span>
+                <span>{activeDirection.intention}<i aria-hidden="true">→</i></span>
               </span>
-            </div>
-
-            <div className="breath-space" aria-live="polite">
-              <div className="breath-orb" data-playing={isPlaying} data-phase={breathPhase}>
-                <span>{breathPhase}</span>
-              </div>
-              <p className="rhythm">{activeDirection.rhythm}</p>
-              <p className="breath-cue">{activeDirection.cue}</p>
-            </div>
-
-            <div className="audio-strip">
-              <span className="audio-mark" aria-hidden="true"><i /><i /><i /><i /></span>
-              <span><small>Audio mood</small>Original pulse · coming next</span>
-              <button type="button" aria-label="Audio ist im Prototyp noch nicht verfügbar">—</button>
-            </div>
-
-            <div className="session-controls">
-              <button className="secondary-action" type="button" onClick={() => setIsPlaying((current) => !current)}>
-                {isPlaying ? "Pausieren" : "Fortsetzen"}
-              </button>
-              <button className="text-action" type="button" onClick={finishSession}>Demo abschließen</button>
-            </div>
+            </button>
+            <section className="curation-note">
+              <p className="kicker">Warum dieser Raum?</p>
+              <h2>Deine Richtung gibt den Ton an.</h2>
+              <p>{direction === "calm" ? "Für Ruhe testen wir eine gleichmäßige Kohärenz-Atmung als vorläufige Methode." : `Für ${activeDirection.label} ist die spezifische Methode bewusst noch offen. In dieser Version prüfen wir gemeinsam Navigation, Atmosphäre und Player.`}</p>
+            </section>
+            <div className="availability-row"><span>Jetzt verfügbar</span><strong>1 Prototyp-Session</strong><small>Weitere Räume folgen erst nach deiner Abnahme.</small></div>
           </div>
+        )}
+
+        {stage === "player" && (
+          <SessionPlayer direction={activeDirection} minutes={minutes} onBack={() => setStage("overview")} onStart={beginPractice} />
+        )}
+
+        {stage === "practice" && (
+          <PracticePlayer
+            direction={activeDirection}
+            minutes={minutes}
+            onFinish={finishPractice}
+          />
         )}
 
         {stage === "reflection" && (
           <div className="screen reflection-screen">
             <div className="completion-mark" aria-hidden="true"><span /></div>
             <p className="kicker">Der Abend beginnt</p>
-            <h1>Was ist jetzt anders?</h1>
+            <h1 tabIndex={-1}>Was ist jetzt anders?</h1>
             <p className="lead">Es gibt keine richtige Antwort. Nimm nur kurz wahr, was gerade da ist.</p>
-
             <div className="reflection-grid" role="group" aria-label="Veränderung auswählen">
-              {reflections.map((item) => (
-                <button
-                  type="button"
-                  key={item}
-                  data-selected={reflection === item}
-                  aria-pressed={reflection === item}
-                  onClick={() => setReflection(item)}
-                >
-                  {item}
-                </button>
-              ))}
+              {reflections.map((item) => <button type="button" key={item} data-selected={reflection === item} aria-pressed={reflection === item} onClick={() => setReflection(item)}>{item}</button>)}
             </div>
-
-            <div className="closing-note">
-              <span>Für jetzt</span>
-              <p>Du musst den Abend nicht optimieren. Du kannst ihn wahrnehmen und dann entscheiden.</p>
-            </div>
-
-            <button className="primary-action" type="button" onClick={restart}>
-              Abend beginnen <span aria-hidden="true">→</span>
-            </button>
+            <div className="closing-note"><span>Für jetzt</span><p>Du musst den Abend nicht optimieren. Du kannst ihn wahrnehmen und dann entscheiden.</p></div>
+            <button className="primary-action" type="button" onClick={restart}>Abend beginnen <span aria-hidden="true">→</span></button>
           </div>
         )}
 
-        {stage !== "opening" && (
+        {stage !== "opening" && stage !== "player" && stage !== "practice" && (
           <footer className="bottom-note"><span>HALE / 2026</span><span>Feel what follows.</span></footer>
         )}
       </section>

@@ -1,7 +1,7 @@
 # HALE decision register
 
 Status: binding recovery mirror  
-Last reconciled: 2026-08-21
+Last reconciled: 2026-08-22
 
 This register preserves the minimum set of decisions and explicitly labeled hypotheses needed to recover HALE in a new chat. Detailed rationale remains in the canonical Notion pages; implementation remains binding on GitHub `main`.
 
@@ -23,6 +23,31 @@ This register preserves the minimum set of decisions and explicitly labeled hypo
 | D-014 | Current state | Supabase is planned only; it is not connected and no schema is approved. | Do not claim persistence, accounts, or backend integration. |
 | D-015 | Decision | Important raw inspiration must live in an approved durable project source; analysis and decisions go into the existing Notion Inspiration Library. | A one-chat attachment is not a reliable long-term source. |
 | D-016 | Decision | Do not create parallel HALE context hubs. | Update the existing Operating System, handoff, manifest, and decision register. |
+| D-017 | Decision | The v0.3 acceptance path must expose optional check-in, activation–valence matrix, SVAC radar, curated overview, and immersive player before tailored methods are evaluated. | These surfaces are P0 release blockers and must be verified together on iPhone. |
+| D-018 | Hypothesis | Grounded Pulse v0.3 continues the dark, mystical threshold through warm sand, linen, travertine, smoked-wood, and clay-like surfaces. | Avoid pure-white screens, generic wellness cleanliness, copied Bali symbols, and any claim that this is final CI. |
+| D-019 | Decision | HALE must not present the same coherence exercise as the tailored method for Ruhe, Klarheit, and Aktivierung. | Ruhe may use a provisional 4-in/4-out coherence prototype; the methods for Klarheit, Aktivierung, Verbindung, and observation stay explicitly open until evaluated. |
+| D-020 | Hypothesis | After the start action, the practice room continues the opening's HALE Aperture over an original full-screen architectural twilight scene. | The supplied screenshot informs atmosphere, full-bleed hierarchy, and progressive disclosure only. Do not copy its image, layout, icons, frequency display, controls, or claims; keep method boundaries explicit. |
+| D-021 | Decision | AC4 Warm Horizon is HALE's master image world; AC1 Horizon is a softer companion atmosphere inside the same system. | Apply the same Aperture, layout, motion, overlay, component, icon, typography, and accessibility rules across both. Full executable CI remains incomplete until logo, type, tokens, and product surfaces pass their own gate. |
+| D-022 | Hypothesis | A fresh web-app load begins with a one-shot cinematic prelude showing only the HALE Aperture and its central light seam; the surfaces open and the view is pulled upward through the seam before the existing start screen appears. | Keep the movement singular and meaningful, not a decorative loop. Provide a short static dissolve for reduced motion and require exact-preview iPhone acceptance before production. |
+| D-023 | Hypothesis | The failed 5.2-second D-022 draft is refined into an approximately 3.4-second AC4 threshold: the Aperture first remains legible, then a continuous centered pull enters the seam and ends in one full-screen light bloom. | Avoid a late scale jump or strobe. Keep graphite/mineral architecture, indirect linen light, no orange-brown wash, and a short static reduced-motion dissolve. Require exact-preview iPhone acceptance. |
+| D-024 | Hypothesis | During practice, the breathing Aperture and centered play/pause action form the primary hierarchy; method/status/progress move to the bottom and session title, description, and method note live in a collapsed disclosure that expands upward. | Brighten the original background by about 20%, retain safe close/finish actions, keep 44+ px targets and short-height scroll, and do not copy the annotated reference UI. Require exact-preview iPhone acceptance. |
+
+## Dated additions · 2026-10-02
+
+| ID | Status | Decision / state | Consequence |
+|---|---|---|---|
+| D-025 | Decision (Julian, Notion 2 October) | The next four weeks prioritize five Persona A voice sessions and interviews. | Stop Opening/logo polish, backend/accounts and new direction methods; decide v0.4 only after analysis. |
+| D-026 | Decision (delegated implementation judgment) | Prepare v0.3.1 as a five-minute Ruhe reliability release. | Natural 0–90 s, 17 whole 4/4 cycles 90–226 s, natural/return 226–300 s; fixes the draft script's one-second cycle mismatch. Method remains a hypothesis, expert review outstanding. |
+| D-027 | Decision (delegated implementation judgment) | Session time and Aperture use one elapsed clock. | Pause freezes both; background/lock pauses guidance until explicit resume. Optional audio becomes the clock when supplied and valid. |
+| D-028 | Current state | Julian confirmed that no voice recording exists yet. | Null audio source, honest silent start, no invented voice evidence; test readiness requires the recording. |
+| D-029 | Decision (source reconciliation) | Migrate the source registry to the fetched HALE workspace IDs and align stale summaries with B-008/B-011 and the October plan. | 39 candidate sources; historical decisions remain dated; no new context hub or final logo approval. |
+
+## Release authorization and security close-out · 2026-10-02
+
+- Julian explicitly confirmed current iPhone context and publication of the concrete prepared v0.3.1 state: “Ich arbeite am IPhone und gebe es frei!”
+- D-012 device authorization is satisfied for this release; no additional approval flow is introduced for routine release fixes.
+- **D-030 · Decision:** ship Next.js 16.3.8 and its exact regenerated lock, resolving the fresh critical/high advisories; require an audit and Chromium/WebKit core flow before main merge.
+- **D-031 · Decision:** verify the public production version and mobile journey after main deploy. This is automated technical evidence; recording, VoiceOver, expert safety review and qualitative interviews remain separate human outcomes.
 
 ## Amendment rule
 

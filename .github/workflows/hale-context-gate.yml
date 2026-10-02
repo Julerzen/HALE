@@ -12,10 +12,13 @@ concurrency:
   group: hale-context-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  NEXT_TELEMETRY_DISABLED: 1
+
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -31,3 +34,21 @@ jobs:
 
       - name: Validate context, types, and production build
         run: npm run check
+
+      - name: Check dependency advisories
+        run: npm audit --audit-level=high
+
+      - name: Install browser test tooling
+        run: npm install --no-save --package-lock=false @playwright/test@1.63.0
+
+      - name: Install Chromium and WebKit
+        run: npx playwright install --with-deps chromium webkit
+
+      - name: Verify mobile flow, pause, accessibility, and reduced motion
+        run: npm run test:browser
+
+      - name: Verify the public production journey after main deploy
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          HALE_TEST_BASE_URL: https://hale-eosin.vercel.app
+        run: npm run test:browser

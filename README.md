@@ -1,32 +1,26 @@
 # HALE
 
-HALE is a mobile-first, evidence-aware breathwork product in active development. The current implementation is an interactive **Work-to-Evening v0.2** vertical slice; its Grounded Pulse visual direction is a hypothesis, not the final CI.
+HALE is a mobile-first, evidence-aware breathwork product. This repository state is **Work-to-Evening v0.3.1** for the October five-person learning round. AC4 Warm Horizon is the selected master image world; final logo and full CI remain in development.
 
 ## Start here
 
-Every agent and contributor must begin with:
+Read [AGENTS.md](./AGENTS.md), [the context manifest](./config/hale-context.json), [the current handoff](./docs/HALE_IMPLEMENTATION_CONTEXT.md), [the decision register](./docs/governance/DECISION_REGISTER.md), and [the change checklist](./docs/governance/CHANGE_IMPACT_CHECKLIST.md). Notion owns strategy and rationale; GitHub main owns binding implementation.
 
-1. [`AGENTS.md`](./AGENTS.md)
-2. [`config/hale-context.json`](./config/hale-context.json)
-3. [`docs/HALE_IMPLEMENTATION_CONTEXT.md`](./docs/HALE_IMPLEMENTATION_CONTEXT.md)
-4. [`docs/governance/DECISION_REGISTER.md`](./docs/governance/DECISION_REGISTER.md)
-5. [`docs/governance/CHANGE_IMPACT_CHECKLIST.md`](./docs/governance/CHANGE_IMPACT_CHECKLIST.md)
-
-The human-readable strategy and rationale live in the existing Notion HALE Operating System. GitHub `main` is binding for implementation. Material conflicts must be surfaced and reconciled.
-
-## Local verification
+## Verification
 
 ```bash
 npm ci
 npm run check
-npm run dev
+npm audit --audit-level=high
+npm install --no-save --package-lock=false @playwright/test@1.63.0
+npx playwright install --with-deps chromium webkit
+npm run test:browser
 ```
 
-## Current boundaries
+## Current scope
 
-- No final logo, palette, typography, audio identity, or CI is approved.
-- Supabase is planned only and is not connected.
-- Third-party music, poetry, and visual references require verified rights before production use.
-- Deployment and merge require an explicit current-chat instruction from the user on their iPhone.
+A five-minute Ruhe prototype, optional session-local check-in, neutral visualizations, direction selection, and an immersive player. Runtime: Next.js 16.3.8 with audited PostCSS 8.5.23/sharp 0.35.5 dependencies. The player uses elapsed time, freezes time and motion on pause, and pauses when the app becomes hidden. Julian's recording is still missing; the current session starts without voice. Add reviewed, project-owned static audio only through `app/session-audio.ts`.
 
-See [`docs/README.md`](./docs/README.md) for the full document map.
+Supabase/accounts, additional methods and further Opening/logo polish are deferred. No raw check-in analytics or storage. Human interviews and expert safety review are outstanding. Deployment remains subject to the current-chat device-context rule in AGENTS.md.
+
+See [release preparation](./docs/releases/2026-10-02-work-to-evening-v0.3.1.md) and [the document map](./docs/README.md).
