@@ -12,7 +12,7 @@ Read [AGENTS.md](./AGENTS.md), [the context manifest](./config/hale-context.json
 npm ci
 npm run check
 npm audit --audit-level=high
-npm install --no-save --package-lock=false @playwright/test@1.56.1
+npm install --no-save --package-lock=false @playwright/test@1.63.0
 npx playwright install --with-deps chromium webkit
 npm run test:browser
 ```
