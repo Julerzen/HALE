@@ -15,7 +15,7 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -31,3 +31,15 @@ jobs:
 
       - name: Validate context, types, and production build
         run: npm run check
+
+      - name: Check dependency advisories
+        run: npm audit --audit-level=high
+
+      - name: Install browser test tooling
+        run: npm install --no-save --package-lock=false @playwright/test@1.56.1
+
+      - name: Install Chromium and WebKit
+        run: npx playwright install --with-deps chromium webkit
+
+      - name: Verify mobile flow, pause, accessibility, and reduced motion
+        run: npm run test:browser

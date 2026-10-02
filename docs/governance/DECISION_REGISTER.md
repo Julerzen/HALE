@@ -32,6 +32,16 @@ This register preserves the minimum set of decisions and explicitly labeled hypo
 | D-023 | Hypothesis | The failed 5.2-second D-022 draft is refined into an approximately 3.4-second AC4 threshold: the Aperture first remains legible, then a continuous centered pull enters the seam and ends in one full-screen light bloom. | Avoid a late scale jump or strobe. Keep graphite/mineral architecture, indirect linen light, no orange-brown wash, and a short static reduced-motion dissolve. Require exact-preview iPhone acceptance. |
 | D-024 | Hypothesis | During practice, the breathing Aperture and centered play/pause action form the primary hierarchy; method/status/progress move to the bottom and session title, description, and method note live in a collapsed disclosure that expands upward. | Brighten the original background by about 20%, retain safe close/finish actions, keep 44+ px targets and short-height scroll, and do not copy the annotated reference UI. Require exact-preview iPhone acceptance. |
 
+## Dated additions · 2026-10-02
+
+| ID | Status | Decision / state | Consequence |
+|---|---|---|---|
+| D-025 | Decision (Julian, Notion 2 October) | The next four weeks prioritize five Persona A voice sessions and interviews. | Stop Opening/logo polish, backend/accounts and new direction methods; decide v0.4 only after analysis. |
+| D-026 | Decision (delegated implementation judgment) | Prepare v0.3.1 as a five-minute Ruhe reliability release. | Natural 0–90 s, 17 whole 4/4 cycles 90–226 s, natural/return 226–300 s; fixes the draft script's one-second cycle mismatch. Method remains a hypothesis, expert review outstanding. |
+| D-027 | Decision (delegated implementation judgment) | Session time and Aperture use one elapsed clock. | Pause freezes both; background/lock pauses guidance until explicit resume. Optional audio becomes the clock when supplied and valid. |
+| D-028 | Current state | Julian confirmed that no voice recording exists yet. | Null audio source, honest silent start, no invented voice evidence; test readiness requires the recording. |
+| D-029 | Decision (source reconciliation) | Migrate the source registry to the fetched HALE workspace IDs and align stale summaries with B-008/B-011 and the October plan. | 39 candidate sources; historical decisions remain dated; no new context hub or final logo approval. |
+
 ## Amendment rule
 
 - Never rewrite history merely to make a past hypothesis look final.

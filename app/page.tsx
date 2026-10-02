@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { StateScale, SvacCheckIn } from "./components/check-in";
 import { HaleAperture } from "./components/hale-aperture";
 import { PracticePlayer } from "./components/practice-player";
@@ -44,20 +44,14 @@ export default function Home() {
   const [svac, setSvac] = useState<SvacValues>(initialSvac);
   const [checkInCompleted, setCheckInCompleted] = useState(false);
   const [direction, setDirection] = useState<DirectionId>("calm");
-  const [minutes, setMinutes] = useState(10);
-  const [remainingSeconds, setRemainingSeconds] = useState(600);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const minutes = 5;
+  const deviceRef = useRef<HTMLElement>(null);
   const [reflection, setReflection] = useState<string | null>(null);
 
   const activeDirection = useMemo(
     () => directions.find((item) => item.id === direction) ?? directions[0],
     [direction],
   );
-  const isCoherencePrototype = direction === "calm";
-  const elapsed = minutes * 60 - remainingSeconds;
-  const cyclePosition = ((elapsed % 8) + 8) % 8;
-  const breathPhase = cyclePosition < 4 ? "Einatmen" : "Ausatmen";
-
   useEffect(() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const preludeTimer = window.setTimeout(
@@ -69,19 +63,11 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (!isPlaying || stage !== "practice" || remainingSeconds <= 0) return;
-    const timer = window.setInterval(() => {
-      setRemainingSeconds((current) => Math.max(0, current - 1));
-    }, 1000);
-    return () => window.clearInterval(timer);
-  }, [isPlaying, remainingSeconds, stage]);
-
-  useEffect(() => {
-    if (stage === "practice" && remainingSeconds === 0) {
-      setIsPlaying(false);
-      setStage("reflection");
-    }
-  }, [remainingSeconds, stage]);
+    if (showPrelude) return;
+    const heading = deviceRef.current?.querySelector<HTMLElement>("h1");
+    heading?.focus({ preventScroll: true });
+    deviceRef.current?.querySelector(".screen")?.scrollTo(0, 0);
+  }, [stage, showPrelude]);
 
   function enterPrototype() {
     setOpeningLeaving(true);
@@ -102,26 +88,29 @@ export default function Home() {
 
   function skipCheckIn() {
     setCheckInCompleted(false);
+    setActivation(5);
+    setValence(5);
+    setSvac({ ...initialSvac });
     setStage("direction");
   }
 
   function beginPractice() {
-    setRemainingSeconds(minutes * 60);
-    setIsPlaying(true);
     setReflection(null);
     setStage("practice");
   }
 
   function finishPractice() {
-    setIsPlaying(false);
     setStage("reflection");
   }
 
   function restart() {
     setStage("opening");
     setOpeningLeaving(false);
-    setIsPlaying(false);
-    setRemainingSeconds(minutes * 60);
+    setActivation(5);
+    setValence(5);
+    setSvac({ ...initialSvac });
+    setCheckInCompleted(false);
+    setDirection("calm");
     setReflection(null);
   }
 
@@ -129,11 +118,11 @@ export default function Home() {
 
   return (
     <main className="prototype-shell">
-      <section className="device" aria-label="HALE Work to Evening Prototyp v0.3">
+      <section ref={deviceRef} className="device" aria-label="HALE Work to Evening Prototyp v0.3.1">
         {stage !== "opening" && stage !== "player" && stage !== "practice" && (
           <header className="topbar">
             <button className="wordmark" type="button" onClick={restart} aria-label="HALE Startseite">HALE</button>
-            <span className="prototype-badge">Prototype 0.3</span>
+            <span className="prototype-badge">Prototype 0.3.1</span>
           </header>
         )}
 
@@ -150,7 +139,7 @@ export default function Home() {
             </div>
             <div className="opening-brand">
               <p>17:00 · Zwischen den Rollen</p>
-              <h1>HALE</h1>
+              <h1 tabIndex={-1}>HALE</h1>
             </div>
             <div className="aperture-space">
               <div className="pulse-field" aria-hidden="true"><i /><i /><i /></div>
@@ -185,7 +174,7 @@ export default function Home() {
           <div className="screen checkin-intro-screen">
             <div className="material-orbit" aria-hidden="true"><span /><i /></div>
             <p className="kicker">Optionaler Check-in · ca. 45 Sek.</p>
-            <h1>Wo bist du gerade?</h1>
+            <h1 tabIndex={-1}>Wo bist du gerade?</h1>
             <p className="lead">Eine kurze Momentaufnahme kann dir helfen, die passende Richtung zu wählen. Sie bewertet nichts und wird nicht gespeichert.</p>
             <div className="privacy-note">
               <span aria-hidden="true">◎</span>
@@ -208,7 +197,7 @@ export default function Home() {
         {stage === "activation" && (
           <div className="screen scale-screen">
             <p className="kicker">Activation</p>
-            <h1>Wie viel Energie ist gerade da?</h1>
+            <h1 tabIndex={-1}>Wie viel Energie ist gerade da?</h1>
             <p className="lead">Nicht gut oder schlecht – nur wenig oder viel Aktivierung in diesem Moment.</p>
             <div className="single-scale-wrap">
               <StateScale id="activation" label="Aktivierung" low="sehr wenig" high="sehr viel" value={activation} onChange={setActivation} />
@@ -217,13 +206,14 @@ export default function Home() {
               <button className="secondary-action" type="button" onClick={() => setStage("checkin-intro")}>Zurück</button>
               <button className="primary-action" type="button" onClick={() => setStage("valence")}>Weiter <span aria-hidden="true">→</span></button>
             </div>
+            <button className="text-action" type="button" onClick={skipCheckIn}>Check-in überspringen</button>
           </div>
         )}
 
         {stage === "valence" && (
           <div className="screen scale-screen">
             <p className="kicker">Valence</p>
-            <h1>Wie fühlt sich dieser Moment an?</h1>
+            <h1 tabIndex={-1}>Wie fühlt sich dieser Moment an?</h1>
             <p className="lead">Auch hier gibt es keine richtige Antwort. Ordne nur dein gegenwärtiges Erleben ein.</p>
             <div className="single-scale-wrap">
               <StateScale id="valence" label="Erleben" low="sehr unangenehm" high="sehr angenehm" value={valence} onChange={setValence} />
@@ -232,26 +222,28 @@ export default function Home() {
               <button className="secondary-action" type="button" onClick={() => setStage("activation")}>Zurück</button>
               <button className="primary-action" type="button" onClick={() => setStage("svac")}>Weiter <span aria-hidden="true">→</span></button>
             </div>
+            <button className="text-action" type="button" onClick={skipCheckIn}>Check-in überspringen</button>
           </div>
         )}
 
         {stage === "svac" && (
           <div className="screen svac-screen">
             <p className="kicker">SVAC · vier Perspektiven</p>
-            <h1>Was ist gerade spürbar?</h1>
+            <h1 tabIndex={-1}>Was ist gerade spürbar?</h1>
             <p className="lead">Eine grobe Einschätzung reicht. Du kannst jede Angabe jederzeit verändern.</p>
             <SvacCheckIn values={svac} onChange={updateSvac} />
             <div className="screen-actions split-actions">
               <button className="secondary-action" type="button" onClick={() => setStage("valence")}>Zurück</button>
               <button className="primary-action" type="button" onClick={completeCheckIn}>Moment ansehen <span aria-hidden="true">→</span></button>
             </div>
+            <button className="text-action" type="button" onClick={skipCheckIn}>Check-in überspringen</button>
           </div>
         )}
 
         {stage === "snapshot" && (
           <div className="screen snapshot-screen">
             <p className="kicker">Dein Check-in</p>
-            <h1>So ist es gerade.</h1>
+            <h1 tabIndex={-1}>So ist es gerade.</h1>
             <p className="lead">Keine Diagnose und kein Ergebnis. Zwei Ansichten auf denselben Moment.</p>
             <div className="visual-stack">
               <ActivationValenceMatrix activation={activation} valence={valence} />
@@ -267,7 +259,7 @@ export default function Home() {
         {stage === "direction" && (
           <div className="screen direction-screen">
             <p className="kicker">Deine Richtung</p>
-            <h1>Wie möchtest du in den Abend gehen?</h1>
+            <h1 tabIndex={-1}>Wie möchtest du in den Abend gehen?</h1>
             <p className="lead">Wähle eine Absicht, nicht die „richtige“ Lösung.</p>
             {checkInCompleted && <button className="snapshot-link" type="button" onClick={() => setStage("snapshot")}><span>Deine Momentaufnahme</span><strong>{activation}/10 Energie · {valence}/10 Erleben</strong><i aria-hidden="true">↗</i></button>}
             <div className="direction-list" role="group" aria-label="Gewünschte Richtung">
@@ -286,7 +278,7 @@ export default function Home() {
         {stage === "overview" && (
           <div className="screen overview-screen">
             <div className="overview-heading">
-              <div><p className="kicker">Für deinen Übergang</p><h1>Ein Raum für {activeDirection.label}.</h1></div>
+              <div><p className="kicker">Für deinen Übergang</p><h1 tabIndex={-1}>Ein Raum für {activeDirection.label}.</h1></div>
               <button className="text-action" type="button" onClick={() => setStage("direction")}>Ändern</button>
             </div>
             <button className="featured-session" type="button" onClick={() => setStage("player")}>
@@ -308,18 +300,13 @@ export default function Home() {
         )}
 
         {stage === "player" && (
-          <SessionPlayer direction={activeDirection} minutes={minutes} onMinutesChange={setMinutes} onBack={() => setStage("overview")} onStart={beginPractice} />
+          <SessionPlayer direction={activeDirection} minutes={minutes} onBack={() => setStage("overview")} onStart={beginPractice} />
         )}
 
         {stage === "practice" && (
           <PracticePlayer
             direction={activeDirection}
             minutes={minutes}
-            remainingSeconds={remainingSeconds}
-            isPlaying={isPlaying}
-            isCoherencePrototype={isCoherencePrototype}
-            breathPhase={breathPhase}
-            onTogglePlaying={() => setIsPlaying((current) => !current)}
             onFinish={finishPractice}
           />
         )}
@@ -328,7 +315,7 @@ export default function Home() {
           <div className="screen reflection-screen">
             <div className="completion-mark" aria-hidden="true"><span /></div>
             <p className="kicker">Der Abend beginnt</p>
-            <h1>Was ist jetzt anders?</h1>
+            <h1 tabIndex={-1}>Was ist jetzt anders?</h1>
             <p className="lead">Es gibt keine richtige Antwort. Nimm nur kurz wahr, was gerade da ist.</p>
             <div className="reflection-grid" role="group" aria-label="Veränderung auswählen">
               {reflections.map((item) => <button type="button" key={item} data-selected={reflection === item} aria-pressed={reflection === item} onClick={() => setReflection(item)}>{item}</button>)}

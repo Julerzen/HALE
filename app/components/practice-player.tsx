@@ -1,3 +1,6 @@
+import { sessionFrame } from "../session-timeline.mjs";
+import { RUHE_AUDIO_SRC } from "../session-audio";
+import { useSessionClock } from "./use-session-clock";
 import Image from "next/image";
 import { formatTime, type Direction } from "../prototype-data";
 import { HaleAperture } from "./hale-aperture";
@@ -5,33 +8,28 @@ import { HaleAperture } from "./hale-aperture";
 type PracticePlayerProps = {
   direction: Direction;
   minutes: number;
-  remainingSeconds: number;
-  isPlaying: boolean;
-  isCoherencePrototype: boolean;
-  breathPhase: "Einatmen" | "Ausatmen";
-  onTogglePlaying: () => void;
   onFinish: () => void;
 };
 
 export function PracticePlayer({
   direction,
   minutes,
-  remainingSeconds,
-  isPlaying,
-  isCoherencePrototype,
-  breathPhase,
-  onTogglePlaying,
   onFinish,
 }: PracticePlayerProps) {
+  const calm = direction.id === "calm";
+  const { elapsedSeconds, isPlaying, notice, toggle } = useSessionClock(calm ? RUHE_AUDIO_SRC : null, onFinish);
+  const frame = sessionFrame(elapsedSeconds, calm);
+  const remainingSeconds = Math.max(0, Math.ceil(minutes * 60 - elapsedSeconds));
+  const isCoherencePrototype = frame.guided;
+  const breathPhase = frame.phase;
   const totalSeconds = minutes * 60;
-  const elapsedSeconds = Math.max(0, totalSeconds - remainingSeconds);
   const progress = Math.min(100, Math.round((elapsedSeconds / totalSeconds) * 100));
   const phaseLabel = isCoherencePrototype ? breathPhase : "Natürlich atmen";
-  const methodTitle = isCoherencePrototype ? "Kohärenz · 4 ein / 4 aus" : "Methodik noch offen";
+  const methodTitle = calm ? (frame.guided ? "4 ein / 4 aus" : "Natürlich atmen") : "Methodik noch offen";
 
   return (
     <div className="screen practice-screen" data-playing={isPlaying}>
-      <h1 className="sr-only">Zwischenraum</h1>
+      <h1 className="sr-only" tabIndex={-1}>Zwischenraum</h1>
       <Image
         className="practice-background"
         src="/images/hale-evening-threshold-v1.webp"
@@ -60,15 +58,17 @@ export function PracticePlayer({
           isPlaying={isPlaying}
           isCoherencePrototype={isCoherencePrototype}
           phase={breathPhase}
+          expansion={frame.expansion}
         />
-        <p className="practice-phase" aria-live="polite" aria-atomic="true">{phaseLabel}</p>
+        <p className="practice-phase" aria-live="off">{phaseLabel}</p>
+        <p className="practice-cue" aria-live="polite" aria-atomic="true">{frame.cue}</p>
       </div>
 
       <div className="practice-controls">
         <button
           className="round-control"
           type="button"
-          onClick={onTogglePlaying}
+          onClick={toggle}
           aria-label={isPlaying ? "Pausieren" : "Fortsetzen"}
         >
           <span aria-hidden="true">{isPlaying ? "Ⅱ" : "▶"}</span>
@@ -77,6 +77,7 @@ export function PracticePlayer({
       </div>
 
       <div className="practice-information">
+        {notice && <p className="practice-notice" role="status">{notice}</p>}
         <div className="practice-readout" aria-label="Sessionstatus">
           <span><small>Methode</small><strong>{methodTitle}</strong></span>
           <span><small>Status</small><strong>{isPlaying ? "Spielt" : "Pausiert"}</strong></span>
@@ -99,13 +100,13 @@ export function PracticePlayer({
             <p className="practice-kicker">Geführter Übergang · {direction.label}</p>
             <h2>Zwischenraum</h2>
             <p>
-              {isCoherencePrototype
+              {calm
                 ? "Ein ruhiger Rhythmus zwischen Arbeit und Abend. Atme nur so tief, wie es angenehm ist."
                 : `Dieser Raum testet Atmosphäre und Ablauf für ${direction.label}. Die passende Atemmethode legen wir erst nach der Abnahme fest.`}
             </p>
             <p className="practice-method-note">
               {isCoherencePrototype
-                ? "Die 4-ein/4-aus-Kohärenz ist ausschließlich für Ruhe ein vorläufiger Prototyp. Pausiere oder atme natürlich weiter, sobald sich etwas unangenehm anfühlt."
+                ? "Ankommen, 17 Zyklen mit 4 Sekunden ein und 4 Sekunden aus, dann natürliches Atmen und Zurückkommen. Die Methode ist vorläufig. Pausiere oder atme natürlich weiter, sobald sich etwas unangenehm anfühlt."
                 : "Für diese Richtung ist noch keine Methode freigegeben. Die Preview behauptet deshalb keine spezifische Atemwirkung. Es wird noch kein Audio abgespielt und nichts gespeichert."}
             </p>
           </div>

@@ -115,3 +115,25 @@ Use this checklist for every material change. A checked list records review; it 
 - [ ] iPhone product acceptance is passed for the exact new PR head
 - [ ] Explicit post-preview merge confirmation is recorded for that exact commit
 - [ ] Production deployment and post-deploy smoke/error checks are verified
+
+## Review record · v0.3.1 October test preparation · 2026-10-02
+
+**Classification:** Draft implementation of D-025–D-029; release instruction received, device context pending. Production is still v0.2.
+
+- [x] Boot documents and all 40 available HALE Notion entities reviewed; linked Perplexity attachment body was not accessible and is not used as evidence
+- [x] main, PR #6, production and existing READY preview inspected
+- [x] Material drift surfaced: stale brand-selection/CI-polish summaries, migrated Notion IDs, missing recording, one-second script cycle mismatch
+- [x] Strategy/scope, editorial copy, method boundaries, privacy, rights, accessibility and reduced-motion code reviewed
+- [x] Existing Opening and original image unchanged; no new third-party media, backend, accounts or analytics
+- [x] Off-app store/social/event/packaging surfaces reviewed as unaffected; no external messages sent
+- [x] Pure elapsed-clock/method scenarios and context gate logic exercised in tool runtime
+- [x] 17 affected existing Notion pages updated and refetched; draft/release/human-outcome boundaries retained
+- [ ] npm context/test/types/build and fresh dependency audit pass for this candidate
+- [ ] Mobile Chromium/WebKit browser checks pass for this candidate
+- [ ] Candidate preview READY and exact-SHA mapped; review threads/checks clear
+- [ ] Current device-context condition answered or explicitly overridden
+- [ ] Concrete-candidate iPhone product acceptance recorded
+- [ ] Authorized production release and post-deploy check complete
+- [ ] Julian recording, expert review and five-person test round complete
+
+The prepared repository files and affected existing Notion pages must carry the same draft status. Historical August validation does not validate this new candidate.

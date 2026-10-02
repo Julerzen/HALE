@@ -699,18 +699,11 @@ h1 {
   box-shadow: 0 0 28px 7px rgba(228, 210, 188, 0.42);
 }
 
-.practice-hale-aperture[data-coherence="true"] .aperture-side,
-.practice-hale-aperture[data-coherence="true"] .aperture-core {
+.practice-hale-aperture .aperture-side,
+.practice-hale-aperture .aperture-core {
   animation: none;
-  transition: transform 4s cubic-bezier(0.45, 0, 0.55, 1), opacity 4s ease, border-color 4s ease;
+  transition: none;
 }
-
-.practice-hale-aperture[data-coherence="true"][data-phase="Einatmen"] .aperture-left { transform: translateX(-8px) scaleX(1.08); }
-.practice-hale-aperture[data-coherence="true"][data-phase="Einatmen"] .aperture-right { transform: translateX(8px) scaleX(1.08); }
-.practice-hale-aperture[data-coherence="true"][data-phase="Einatmen"] .aperture-core { opacity: 1; transform: scaleY(1); }
-.practice-hale-aperture[data-coherence="true"][data-phase="Ausatmen"] .aperture-left { transform: translateX(8px) scaleX(0.92); }
-.practice-hale-aperture[data-coherence="true"][data-phase="Ausatmen"] .aperture-right { transform: translateX(-8px) scaleX(0.92); }
-.practice-hale-aperture[data-coherence="true"][data-phase="Ausatmen"] .aperture-core { opacity: 0.58; transform: scaleY(0.84); }
 
 .practice-hale-aperture[data-playing="false"] .aperture-side,
 .practice-hale-aperture[data-playing="false"] .aperture-core,
@@ -987,4 +980,14 @@ h1 {
   .prelude-hale-aperture .aperture-left { transform: translateX(-6px) scaleX(1.04); }
   .prelude-hale-aperture .aperture-right { transform: translateX(6px) scaleX(1.04); }
   .prelude-hale-aperture .aperture-core { opacity: 0.88; transform: scaleY(0.94); }
+}
+
+/* v0.3.1: practice motion follows the same elapsed clock as text and pause. */
+.practice-cue { margin: 12px 0 0; max-width: 290px; min-height: 48px; color: #f2eee6; font-size: 13px; line-height: 1.6; text-align: center; }
+.practice-notice { color: #f2eee6; font-size: 13px; line-height: 1.6; }
+.player-safety { color: #d3cdc4; font-size: 12px; line-height: 1.7; margin: 20px 0; }
+.svac-scales .state-scale input { min-height: 44px; }
+.overview-heading .text-action, .text-action, .snapshot-link { min-height: 44px; }
+@media (prefers-reduced-motion: reduce) {
+  .practice-hale-aperture .aperture-side, .practice-hale-aperture .aperture-core { transform: none !important; opacity: 0.8 !important; }
 }

@@ -63,7 +63,7 @@ export const initialSvac: SvacValues = {
   connectedness: 5,
 };
 
-export const reflections = ["Etwas ruhiger", "Etwas klarer", "Mehr bei mir", "Unverändert"];
+export const reflections = ["Etwas ruhiger", "Etwas klarer", "Mehr bei mir", "Unverändert", "Anders oder nicht sicher"];
 
 export function formatTime(seconds: number) {
   const minutes = Math.floor(seconds / 60);

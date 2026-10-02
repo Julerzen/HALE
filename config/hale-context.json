@@ -6,7 +6,7 @@
     "repository": "Julerzen/HALE",
     "defaultBranch": "main"
   },
-  "lastReconciled": "2026-08-22",
+  "lastReconciled": "2026-10-02",
   "authority": {
     "strategyAndRationale": "Notion",
     "technicalImplementation": "GitHub main",
@@ -30,218 +30,242 @@
   "notionSources": [
     {
       "key": "operatingSystem",
-      "pageId": "3c346ad5-a7ba-8150-b629-d1a69f9bb266",
-      "url": "https://app.notion.com/p/3c346ad5a7ba8150b629d1a69f9bb266",
+      "pageId": "ffa17c47-346b-8200-b94a-81754953ba54",
+      "url": "https://app.notion.com/p/ffa17c47346b8200b94a81754953ba54",
       "requiredInHandoff": true
     },
     {
       "key": "foundation",
-      "pageId": "3c346ad5-a7ba-815b-af99-e786398ddac5",
-      "url": "https://app.notion.com/p/3c346ad5a7ba815baf99e786398ddac5",
+      "pageId": "7c117c47-346b-8246-a0b2-01ab97902ce8",
+      "url": "https://app.notion.com/p/7c117c47346b8246a0b201ab97902ce8",
       "requiredInHandoff": true
     },
     {
       "key": "implementationPlan",
-      "pageId": "3c346ad5-a7ba-81cc-8b56-d520a64a46d6",
-      "url": "https://app.notion.com/p/3c346ad5a7ba81cc8b56d520a64a46d6",
+      "pageId": "9a917c47-346b-8247-a1a6-01aae92fcef1",
+      "url": "https://app.notion.com/p/9a917c47346b8247a1a601aae92fcef1",
       "requiredInHandoff": true
     },
     {
       "key": "designSystem",
-      "pageId": "3c346ad5-a7ba-813c-97c4-f0f9537db505",
-      "url": "https://app.notion.com/p/3c346ad5a7ba813c97c4f0f9537db505",
+      "pageId": "bd617c47-346b-828a-9dd9-01823a404ee2",
+      "url": "https://app.notion.com/p/bd617c47346b828a9dd901823a404ee2",
       "requiredInHandoff": true
     },
     {
       "key": "informationArchitecture",
-      "pageId": "3c346ad5-a7ba-819a-8a5a-f9860171bcd9",
-      "url": "https://app.notion.com/p/3c346ad5a7ba819a8a5af9860171bcd9",
+      "pageId": "71e17c47-346b-8372-99f3-81727ec786e4",
+      "url": "https://app.notion.com/p/71e17c47346b837299f381727ec786e4",
       "requiredInHandoff": true
     },
     {
       "key": "userJourneys",
-      "pageId": "3c346ad5-a7ba-8135-b8a3-dd13c7a945f6",
-      "url": "https://app.notion.com/p/3c346ad5a7ba8135b8a3dd13c7a945f6",
+      "pageId": "9dd17c47-346b-8352-9381-01c148fad517",
+      "url": "https://app.notion.com/p/9dd17c47346b8352938101c148fad517",
       "requiredInHandoff": true
     },
     {
       "key": "stateCheckIn",
-      "pageId": "3c346ad5-a7ba-8138-bf0e-e64079e49bba",
-      "url": "https://app.notion.com/p/3c346ad5a7ba8138bf0ee64079e49bba",
+      "pageId": "9be17c47-346b-833b-990c-012d280a8a73",
+      "url": "https://app.notion.com/p/9be17c47346b833b990c012d280a8a73",
       "requiredInHandoff": true
     },
     {
       "key": "inspirationLibrary",
-      "pageId": "3c346ad5-a7ba-814e-86c9-c3eb9fb90597",
-      "url": "https://app.notion.com/p/3c346ad5a7ba814e86c9c3eb9fb90597",
+      "pageId": "0f317c47-346b-831d-b319-01e4a60b4f47",
+      "url": "https://app.notion.com/p/0f317c47346b831db31901e4a60b4f47",
       "requiredInHandoff": true
     },
     {
       "key": "safety",
-      "pageId": "3c346ad5-a7ba-81a6-9e5d-f899aa2bcb24",
-      "url": "https://app.notion.com/p/3c346ad5a7ba81a69e5df899aa2bcb24",
+      "pageId": "c2917c47-346b-835c-beb2-01d7fff02c0e",
+      "url": "https://app.notion.com/p/c2917c47346b835cbeb201d7fff02c0e",
       "requiredInHandoff": true
     },
     {
       "key": "technicalArchitecture",
-      "pageId": "3c346ad5-a7ba-8153-ba15-f5369ea02622",
-      "url": "https://app.notion.com/p/3c346ad5a7ba8153ba15f5369ea02622",
+      "pageId": "dd117c47-346b-82a1-ac19-01a17d3b0f45",
+      "url": "https://app.notion.com/p/dd117c47346b82a1ac1901a17d3b0f45",
       "requiredInHandoff": true
     },
     {
       "key": "weeklyReviews",
-      "pageId": "3c346ad5-a7ba-81a1-8a6c-efcfd73a0a70",
-      "url": "https://app.notion.com/p/3c346ad5a7ba81a18a6cefcfd73a0a70",
+      "pageId": "a9717c47-346b-839b-b2b5-81a92998f907",
+      "url": "https://app.notion.com/p/a9717c47346b839bb2b581a92998f907",
       "requiredInHandoff": true
     },
     {
       "key": "competitorLandscape",
-      "pageId": "3c346ad5-a7ba-8107-8313-f570ab985c15",
-      "url": "https://app.notion.com/p/3c346ad5a7ba81078313f570ab985c15",
+      "pageId": "cc317c47-346b-837f-ad45-015cff0fce57",
+      "url": "https://app.notion.com/p/cc317c47346b837fad45015cff0fce57",
       "requiredInHandoff": false
     },
     {
       "key": "breatheWithSandyAnalysis",
-      "pageId": "3c346ad5-a7ba-8188-a2e9-fa1f8aa8917a",
-      "url": "https://app.notion.com/p/3c346ad5a7ba8188a2e9fa1f8aa8917a",
+      "pageId": "b3d17c47-346b-831b-8634-8169a6ec829f",
+      "url": "https://app.notion.com/p/b3d17c47346b831b86348169a6ec829f",
       "requiredInHandoff": false
     },
     {
       "key": "germanMarketOpportunities",
-      "pageId": "3c346ad5-a7ba-81c3-a00c-dab67e71196f",
-      "url": "https://app.notion.com/p/3c346ad5a7ba81c3a00cdab67e71196f",
+      "pageId": "c6a17c47-346b-83df-84c5-01a5b3bb1b23",
+      "url": "https://app.notion.com/p/c6a17c47346b83df84c501a5b3bb1b23",
       "requiredInHandoff": false
     },
     {
       "key": "userNeedsAndPainPoints",
-      "pageId": "3c346ad5-a7ba-814c-847d-e746499c7117",
-      "url": "https://app.notion.com/p/3c346ad5a7ba814c847de746499c7117",
+      "pageId": "62417c47-346b-832f-8c84-81f513179ff7",
+      "url": "https://app.notion.com/p/62417c47346b832f8c8481f513179ff7",
       "requiredInHandoff": false
     },
     {
       "key": "researchAndLiteratureLibrary",
-      "pageId": "3c346ad5-a7ba-8174-9fdb-f5ae34455f1c",
-      "url": "https://app.notion.com/p/3c346ad5a7ba81749fdbf5ae34455f1c",
+      "pageId": "43217c47-346b-820e-9d2f-01dd00c2826e",
+      "url": "https://app.notion.com/p/43217c47346b820e9d2f01dd00c2826e",
       "requiredInHandoff": false
     },
     {
       "key": "brandStrategy",
-      "pageId": "3c346ad5-a7ba-8119-9395-ca9e11adaa93",
-      "url": "https://app.notion.com/p/3c346ad5a7ba81199395ca9e11adaa93",
+      "pageId": "2ce17c47-346b-82ef-a3d3-813188ab6547",
+      "url": "https://app.notion.com/p/2ce17c47346b82efa3d3813188ab6547",
       "requiredInHandoff": false
     },
     {
       "key": "creativeTerritories",
-      "pageId": "3c346ad5-a7ba-818e-8057-dc74340a99fe",
-      "url": "https://app.notion.com/p/3c346ad5a7ba818e8057dc74340a99fe",
+      "pageId": "f9017c47-346b-837f-b76f-81c7bead0eae",
+      "url": "https://app.notion.com/p/f9017c47346b837fb76f81c7bead0eae",
       "requiredInHandoff": false
     },
     {
       "key": "moodboards",
-      "pageId": "3c346ad5-a7ba-817f-84b2-ce80949345b9",
-      "url": "https://app.notion.com/p/3c346ad5a7ba817f84b2ce80949345b9",
+      "pageId": "ac217c47-346b-8365-b5af-01d3b396331d",
+      "url": "https://app.notion.com/p/ac217c47346b8365b5af01d3b396331d",
       "requiredInHandoff": false
     },
     {
       "key": "brandBible",
-      "pageId": "3c346ad5-a7ba-8136-86ea-e1e28744f74e",
-      "url": "https://app.notion.com/p/3c346ad5a7ba813686eae1e28744f74e",
+      "pageId": "b5a17c47-346b-820c-8120-010dab78dbed",
+      "url": "https://app.notion.com/p/b5a17c47346b820c8120010dab78dbed",
       "requiredInHandoff": false
     },
     {
       "key": "brandDecisionLog",
-      "pageId": "3c346ad5-a7ba-819f-80f7-f338e4aaea83",
-      "url": "https://app.notion.com/p/3c346ad5a7ba819f80f7f338e4aaea83",
+      "pageId": "7a317c47-346b-829e-a3e6-81ffa0647706",
+      "url": "https://app.notion.com/p/7a317c47346b829ea3e681ffa0647706",
       "requiredInHandoff": false
     },
     {
       "key": "touchpointMatrix",
-      "pageId": "3c346ad5-a7ba-81e0-9e93-df3040e2a2e1",
-      "url": "https://app.notion.com/p/3c346ad5a7ba81e09e93df3040e2a2e1",
+      "pageId": "a5c17c47-346b-82b9-83e9-017d20178c4c",
+      "url": "https://app.notion.com/p/a5c17c47346b82b983e9017d20178c4c",
       "requiredInHandoff": false
     },
     {
       "key": "contentStrategy",
-      "pageId": "3c346ad5-a7ba-81e8-b764-d7cec63c8e35",
-      "url": "https://app.notion.com/p/3c346ad5a7ba81e8b764d7cec63c8e35",
+      "pageId": "07917c47-346b-82f7-8675-815a2b7723f6",
+      "url": "https://app.notion.com/p/07917c47346b82f78675815a2b7723f6",
       "requiredInHandoff": false
     },
     {
       "key": "sessionTaxonomy",
-      "pageId": "3c346ad5-a7ba-8176-84e1-e093ce82ccf7",
-      "url": "https://app.notion.com/p/3c346ad5a7ba817684e1e093ce82ccf7",
+      "pageId": "c0417c47-346b-8282-8c3a-815b38622325",
+      "url": "https://app.notion.com/p/c0417c47346b82828c3a815b38622325",
       "requiredInHandoff": false
     },
     {
       "key": "editorialGuidelines",
-      "pageId": "3c346ad5-a7ba-8196-b479-fc4711afdff3",
-      "url": "https://app.notion.com/p/3c346ad5a7ba8196b479fc4711afdff3",
+      "pageId": "bf117c47-346b-83d3-834d-0180c971c88b",
+      "url": "https://app.notion.com/p/bf117c47346b83d3834d0180c971c88b",
       "requiredInHandoff": false
     },
     {
       "key": "goldenNuggetTemplate",
-      "pageId": "3c346ad5-a7ba-815e-9bb6-dde7ae8f0d23",
-      "url": "https://app.notion.com/p/3c346ad5a7ba815e9bb6dde7ae8f0d23",
+      "pageId": "e8317c47-346b-8397-8ddb-81d9e9940f67",
+      "url": "https://app.notion.com/p/e8317c47346b83978ddb81d9e9940f67",
       "requiredInHandoff": false
     },
     {
       "key": "contentProductionWorkflow",
-      "pageId": "3c346ad5-a7ba-8186-83c4-caa5e493cc4d",
-      "url": "https://app.notion.com/p/3c346ad5a7ba818683c4caa5e493cc4d",
+      "pageId": "65117c47-346b-827b-91f8-81d522fc42ea",
+      "url": "https://app.notion.com/p/65117c47346b827b91f881d522fc42ea",
       "requiredInHandoff": false
     },
     {
       "key": "productVision",
-      "pageId": "3c346ad5-a7ba-8113-96d4-de8b64947916",
-      "url": "https://app.notion.com/p/3c346ad5a7ba811396d4de8b64947916",
+      "pageId": "32917c47-346b-83d4-a5f0-01d1b23a6eed",
+      "url": "https://app.notion.com/p/32917c47346b83d4a5f001d1b23a6eed",
       "requiredInHandoff": false
     },
     {
       "key": "mvpScope",
-      "pageId": "3c346ad5-a7ba-81f4-bf1e-dfeb5daeaeb0",
-      "url": "https://app.notion.com/p/3c346ad5a7ba81f4bf1edfeb5daeaeb0",
+      "pageId": "89017c47-346b-822b-9103-81dc9d2c83f1",
+      "url": "https://app.notion.com/p/89017c47346b822b910381dc9d2c83f1",
       "requiredInHandoff": false
     },
     {
       "key": "featureBacklog",
-      "pageId": "3c346ad5-a7ba-81e5-a47e-c801ee4c194d",
-      "url": "https://app.notion.com/p/3c346ad5a7ba81e5a47ec801ee4c194d",
+      "pageId": "f9817c47-346b-82de-be5d-011af16aaa9c",
+      "url": "https://app.notion.com/p/f9817c47346b82debe5d011af16aaa9c",
       "requiredInHandoff": false
     },
     {
       "key": "productRoadmap",
-      "pageId": "3c346ad5-a7ba-81b5-8a46-d5c6017d2c89",
-      "url": "https://app.notion.com/p/3c346ad5a7ba81b58a46d5c6017d2c89",
+      "pageId": "e8f17c47-346b-8347-9757-819512954120",
+      "url": "https://app.notion.com/p/e8f17c47346b83479757819512954120",
       "requiredInHandoff": false
     },
     {
       "key": "dataAndContentModel",
-      "pageId": "3c346ad5-a7ba-81db-b081-d31e402cbe09",
-      "url": "https://app.notion.com/p/3c346ad5a7ba81dbb081d31e402cbe09",
+      "pageId": "00617c47-346b-836e-87c0-012c1312f0ec",
+      "url": "https://app.notion.com/p/00617c47346b836e87c0012c1312f0ec",
       "requiredInHandoff": false
     },
     {
       "key": "qualityAccessibilityAndPrivacy",
-      "pageId": "3c346ad5-a7ba-8169-894a-c72771013b30",
-      "url": "https://app.notion.com/p/3c346ad5a7ba8169894ac72771013b30",
+      "pageId": "e0717c47-346b-824d-87fa-0156ac50a3a1",
+      "url": "https://app.notion.com/p/e0717c47346b824d87fa0156ac50a3a1",
       "requiredInHandoff": false
     },
     {
       "key": "voiceAndFacilitationJourney",
-      "pageId": "3c346ad5-a7ba-81ff-b888-dd371a9aa4ff",
-      "url": "https://app.notion.com/p/3c346ad5a7ba81ffb888dd371a9aa4ff",
+      "pageId": "50417c47-346b-836d-ad98-812ed07e9174",
+      "url": "https://app.notion.com/p/50417c47346b836dad98812ed07e9174",
       "requiredInHandoff": false
     },
     {
       "key": "personasDatabase",
-      "pageId": "c68d0399-c892-469e-9181-b24e288c669f",
-      "url": "https://app.notion.com/p/c68d0399c892469e9181b24e288c669f",
+      "pageId": "ce517c47-346b-8385-807e-010fc4aaa636",
+      "url": "https://app.notion.com/p/ce517c47346b8385807e010fc4aaa636",
       "requiredInHandoff": false
+    },
+    {
+      "key": "projectHome",
+      "pageId": "4e617c47-346b-8234-8036-01ef2159a94a",
+      "url": "https://app.notion.com/p/4e617c47346b8234803601ef2159a94a",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "personaA",
+      "pageId": "d8717c47-346b-83fb-b3b3-01a817a2958f",
+      "url": "https://app.notion.com/p/d8717c47346b83fbb3b301a817a2958f",
+      "requiredInHandoff": false
+    },
+    {
+      "key": "sessionScripts",
+      "pageId": "7a817c47-346b-8223-a3d7-81651916b199",
+      "url": "https://app.notion.com/p/7a817c47346b8223a3d781651916b199",
+      "requiredInHandoff": true
+    },
+    {
+      "key": "testRoundOne",
+      "pageId": "3ed17c47-346b-819d-a0f5-ddc1bdb4be0a",
+      "url": "https://app.notion.com/p/3ed17c47346b819da0f5ddc1bdb4be0a",
+      "requiredInHandoff": true
     }
   ],
   "implementation": {
     "application": "Next.js mobile-first interactive prototype",
-    "currentJourney": "Work to Evening v0.3 AC4 motion and practice-hierarchy refinement candidate",
+    "currentJourney": "Work to Evening v0.3.1 test-preparation candidate",
     "brandDirection": {
       "master": "AC4 Warm Horizon",
       "companion": "AC1 Horizon",
@@ -263,6 +287,21 @@
       "provider": "Vercel",
       "project": "hale",
       "productionTrigger": "merge to main through Git integration"
+    },
+    "researchGoal": {
+      "participants": 5,
+      "persona": "A",
+      "session": "Ruhe",
+      "durationMinutes": 5,
+      "voice": "Julian",
+      "testWeekEnds": "2026-10-25",
+      "reviewBy": "2026-11-01",
+      "status": "Preparation; recording and interviews outstanding"
+    },
+    "audio": {
+      "status": "Awaiting Julian recording",
+      "source": null,
+      "privacy": "Project-owned static media only; no check-in upload"
     }
   },
   "governance": {

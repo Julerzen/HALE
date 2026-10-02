@@ -39,7 +39,7 @@ Prefer voluntary, concrete language:
 
 ## Time
 
-Primary entry hypothesis: 5–10 minutes, with 10 minutes as the initial default. Longer sessions remain available but are not framed as morally better or universally more effective.
+October 2026 test scope: a fixed five-minute Ruhe session. Ten-minute sessions and other methods are deferred until the five interviews have been analyzed.
 
 ## Directions
 
@@ -51,7 +51,7 @@ Default hypothesis for releasing work mode, strengthening bodily awareness, and 
 
 Optional when the user wants to exercise or enter an active evening. No claims about oxygen saturation, blood cells, lactate clearance, mitochondria, recovery, or performance may ship without method-specific evidence and expert review.
 
-## Ten-minute structure
+## Five-minute test structure
 
 1. Arrive without judgment.
 2. Select an intention.
@@ -96,3 +96,9 @@ A normal iOS app cannot arbitrarily overlay its own pop-up on Instagram. A volun
 - Should regulation be the default or should choices be neutral?
 - Which audio direction fits the primary persona without excluding others?
 - Which digital intervention is technically feasible and ethically aligned?
+
+## October learning round · 2026-10-02
+
+The silent v0.3.1 preparation is distinct from the planned research session with Julian's voice. Its timing is natural breath 0:00–1:30, 17 full 4/4 cycles 1:30–3:46, natural breath 3:46–4:30, and return 4:30–5:00. No holds or forced depth. Pause and screen/background changes freeze the guidance.
+
+Five Persona A participants and interview notes must be collected by Julian. H1/H2 require three of five unsolicited moment descriptions/appropriate subjective changes; H3 requires two of five concrete return moments or link requests. These are qualitative direction signals, not statistical or clinical validation. No participant results exist yet.

@@ -1,7 +1,7 @@
 # HALE implementation context
 
 Status: binding cross-chat implementation handoff  
-Last reconciled: 2026-08-22  
+Last reconciled: 2026-10-02  
 Binding implementation branch: `main` after the approved integration merge
 
 ## Purpose
@@ -29,17 +29,20 @@ When a decision affects both strategy and implementation, Notion and GitHub must
 
 ## Canonical Notion sources
 
-- [HALE Operating System](https://app.notion.com/p/3c346ad5a7ba8150b629d1a69f9bb266)
-- [HALE Foundation Brief v0.3](https://app.notion.com/p/3c346ad5a7ba815baf99e786398ddac5)
-- [HALE Implementation Plan](https://app.notion.com/p/3c346ad5a7ba81cc8b56d520a64a46d6)
-- [Design System](https://app.notion.com/p/3c346ad5a7ba813c97c4f0f9537db505)
-- [Information Architecture](https://app.notion.com/p/3c346ad5a7ba819a8a5af9860171bcd9)
-- [User Journeys](https://app.notion.com/p/3c346ad5a7ba8135b8a3dd13c7a945f6)
-- [State check-in specification](https://app.notion.com/p/3c346ad5a7ba8138bf0ee64079e49bba)
-- [Inspiration Library](https://app.notion.com/p/3c346ad5a7ba814e86c9c3eb9fb90597)
-- [Safety & Claims](https://app.notion.com/p/3c346ad5a7ba81a69e5df899aa2bcb24)
-- [Technical Architecture](https://app.notion.com/p/3c346ad5a7ba8153ba15f5369ea02622)
-- [Weekly Reviews & Planning](https://app.notion.com/p/3c346ad5a7ba81a18a6cefcfd73a0a70)
+- [HALE Operating System](https://app.notion.com/p/ffa17c47346b8200b94a81754953ba54)
+- [HALE Foundation Brief v0.3](https://app.notion.com/p/7c117c47346b8246a0b201ab97902ce8)
+- [HALE Implementation Plan](https://app.notion.com/p/9a917c47346b8247a1a601aae92fcef1)
+- [Design System](https://app.notion.com/p/bd617c47346b828a9dd901823a404ee2)
+- [Information Architecture](https://app.notion.com/p/71e17c47346b837299f381727ec786e4)
+- [User Journeys](https://app.notion.com/p/9dd17c47346b8352938101c148fad517)
+- [State check-in specification](https://app.notion.com/p/9be17c47346b833b990c012d280a8a73)
+- [Inspiration Library](https://app.notion.com/p/0f317c47346b831db31901e4a60b4f47)
+- [Safety & Claims](https://app.notion.com/p/c2917c47346b835cbeb201d7fff02c0e)
+- [Technical Architecture](https://app.notion.com/p/dd117c47346b82a1ac1901a17d3b0f45)
+- [Weekly Reviews & Planning](https://app.notion.com/p/a9717c47346b839bb2b581a92998f907)
+
+- [Session concepts and recording script](https://app.notion.com/p/7a817c47346b8223a3d781651916b199)
+- [October test round](https://app.notion.com/p/3ed17c47346b819da0f5ddc1bdb4be0a)
 
 The exact IDs and machine roles for the complete HALE Notion structure are mirrored in `config/hale-context.json`. The Operating System remains the canonical index; agents fetch all pages affected by the task rather than loading unrelated documents indiscriminately.
 
@@ -54,48 +57,27 @@ Codex automatically discovers a repository-root `AGENTS.md` when it works in the
 
 This separation is intentional: it is the honest technical boundary between project-chat memory, Notion, and repository automation.
 
-## Current implementation status
+## Current implementation status · 2026-10-02
 
-GitHub `main` and production still contain v0.2:
+**Production:** v0.2, GitHub main `6cf1e77d49a8b879badd93c763b0db5f7d8931b1`, public URL https://hale-eosin.vercel.app. Verified READY during the October audit. It has not been upgraded by this draft.
 
-- a mobile-first interactive Work-to-Evening vertical slice;
-- an original HALE opening aperture made from two breathing surfaces and a central light seam;
-- choices for Ruhe, Klarheit, or Energie, currently followed by an insufficiently differentiated practice;
-- a 5- or 10-minute entry, functional timer, pause state, and value-free reflection;
-- a provisional Grounded Pulse v0.2 visual hypothesis;
-- automated repository context validation, type checking, and production build;
-- a Vercel Git integration where merging `main` may trigger production.
+**Existing preview:** PR #6, branch `prototype/work-to-evening-v03`, head `f34554f32cf35358f3c28728d33157f7acb99df3`. Vercel preview https://hale-goxsspey3-julerzen1.vercel.app is READY. Earlier head `4d7c2b3a` failed iPhone acceptance; current head has no recorded exact-head iPhone acceptance. Historical August checks apply to their recorded commits only.
 
-The v0.3 preview candidate, which is **not yet approved for `main` or production**, adds:
+**Next release candidate:** v0.3.1 prepares the October learning round, preserving the v0.3 Opening, optional check-in, matrix/radar, five directions, overview and immersive player. It fixes elapsed-time drift, shared timer/motion pause, background auto-pause, heading focus, 44-pixel SVAC/change targets, optional skip throughout the check-in and fresh-session reset. Ruhe uses a fixed five-minute timeline: natural breathing until 1:30, 17 complete 4/4 cycles until 3:46, natural breathing and return until 5:00. Other methods stay explicitly open.
 
-- an optional, session-local activation–valence plus SVAC check-in using six neutral 0–10 inputs;
-- a continuous activation–valence matrix and an accessible four-axis SVAC radar;
-- explicit desired-direction selection followed by a curated overview and dedicated immersive player;
-- the Grounded Pulse v0.3 visual hypothesis with dark atmospheric continuity and warm sand, linen, travertine, smoked-wood, and clay-like material cues;
-- a provisional 4-in/4-out coherence practice only for Ruhe;
-- an explicit “method still open” state for Klarheit, Aktivierung, Verbindung, and observation so the prototype does not fake differentiation;
-- a distinct post-start practice room with an original, project-owned architectural twilight background and the same two-sided HALE Aperture used in the opening;
-- a one-shot prelude on a fresh web-app load: the HALE Aperture remains clearly visible inside an AC4-derived architectural light threshold, opens once, then a short continuous pull enters its central seam and ends in one full-screen light bloom before revealing the existing start screen;
-- a revised practice hierarchy in which the enlarged breathing Aperture and centered play/pause control dominate, while method/status/progress sit at the bottom and the session title, description, and method note live in a collapsed disclosure that opens upward;
-- a reduced-motion alternative that removes the camera pull and uses a short static dissolve;
-- no persistence, backend, third-party analytics, third-party audio, or copied reference assets.
+**Audio:** Julian confirmed on 2026-10-02 that no recording exists. The candidate supports a project-owned static recording through `app/session-audio.ts`; its source remains null and the visible experience explicitly starts without voice. A silent prototype is not evidence for the voice-session research goal. No synthesized substitute, third-party track or fictional recording is supplied.
 
-The earlier exact preview head `4d7c2b3a073689d8a7ec461150eb4d2583fea38d` failed iPhone product acceptance on 2026-08-22. Its 5.2-second pull and previous practice hierarchy are historical draft evidence, not the current acceptance target. `main` and production remain on v0.2 while the faster motion and reordered practice room are reviewed in the draft PR.
+**Verification:** new Node timeline regressions and Chromium/WebKit mobile checks are prepared. Four core timing/method scenarios and the context gate logic (39 sources/five boot files) were exercised in the tool runtime; full npm, browser and dependency-audit checks remain pending until the candidate can run in CI. No new local build, dependency result, deployed browser result or human iPhone acceptance is claimed.
 
-The current implementation candidate is commit `72fdfcb99654ba3b9c6f360528ee45a6584a0e91` in draft PR #6. Vercel preview deployment `dpl_12Kneq84vRi4XzZL2gY1eirMSn7i` is READY; local and GitHub context gates, strict TypeScript, production build, deployed mobile core flow, timing checkpoints, player hierarchy, pause/resume, disclosure behavior, method boundary, and runtime-error checks passed. This is technical evidence only. Exact-link iPhone product acceptance remains required before any merge.
+**Source migration:** the reconnected Notion HALE workspace exposes new page IDs. The candidate migrates the original 35 registered sources and adds project home, Persona A, session scripts and the October test round (39 total). References point to the fetched HALE workspace; the old connector IDs must not be treated as canonical.
 
-The current canonical **image-world decision** in Notion is AC4 Warm Horizon as master plus AC1 Horizon as its softer companion atmosphere. The prototype prelude may already apply their graphite depth, indirect warm seam, emptiness, and opening motion grammar. This does **not** mean the full executable CI is complete: final Aperture geometry/logo, typography, exact color tokens, icons, audio, and the broader product conversion remain in development and require their own iPhone and brand-conformance gate.
+**Binding October goal:** five Persona A people test a five-minute Ruhe session with Julian's own voice around 17:00, followed by interviews. Recording by 11 October, integration/recruitment by 18 October, sessions by 25 October, analysis and v0.4 decision by 1 November. Opening polish, logo finalization, Supabase/accounts and additional methods are deferred. v0.3.1 is preparation, not a validated v0.4.
 
-Not yet implemented or approved:
+**Brand:** Inner Architecture is selected (Notion B-008); AC4 Warm Horizon is the master image world and AC1 Horizon the companion (B-011). Finale logo geometry, type, tokens, icons and full executable CI remain unfinished. Older summaries calling these selections pending are superseded by the dated decision log, not by new visual choices.
 
-- final logo, colors, typography, icon system, motion system, or audio identity;
-- iPhone product acceptance of the v0.3 check-in, visualizations, overview, and player;
-- validated and safety-reviewed methods for Klarheit, Aktivierung, Verbindung, or observation;
-- a final content library or final session taxonomy;
-- a Supabase connection or approved database schema;
-- licensed production music or third-party poetry.
+**Release authorization:** the current user explicitly commissioned a new release and delegated implementation decisions. The repository's device-context question is pending. No preview-triggering branch movement or merge occurs until that condition is answered or explicitly overridden. Product acceptance must be recorded honestly for the concrete candidate; no prior rejected head is reclassified.
 
-Never describe these items as complete.
+**Still outstanding:** Julian's recording and editorial review, expert safety review, five participant commitments/tests/interviews, exact-candidate product acceptance and successful automated release checks. No backend, persistence or analytics has been connected.
 
 ## Required experience sequence
 
@@ -132,7 +114,7 @@ Melokind — “Kellermysterium” is a mood reference only. No copyrighted trac
 
 - The formal workday ends while internal work mode continues.
 - Regulation/coherence is the default hypothesis; activation remains optional.
-- Five minutes is the lowest-friction entry; ten minutes is the preferred first complete session.
+- For the October learning round, five minutes is the fixed entry. Ten-minute variants are deferred.
 - Language is concrete, voluntary, non-judgmental, and free of wellness buzzwords.
 - The ending returns agency instead of forcing another app action.
 
