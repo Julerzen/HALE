@@ -1,8 +1,8 @@
-# Work-to-Evening v0.3.1 · preparation · 2026-10-02
+# Work-to-Evening v0.3.1 · release record · 2026-10-02
 
 ## Goal and classification
 
-Draft implementation supporting the Notion October goal: five Persona A users complete a five-minute Ruhe session with Julian's voice and are interviewed. This maintenance version preserves the Opening and v0.3 path; it does not claim research completion or v0.4 validation.
+Implementation supporting the Notion October goal: five Persona A users complete a five-minute Ruhe session with Julian's voice and are interviewed. This maintenance version preserves the Opening and v0.3 path; it does not claim research completion or v0.4 validation.
 
 ## Changes
 
@@ -15,15 +15,18 @@ Draft implementation supporting the Notion October goal: five Persona A users co
 - New timing regressions, mobile Chromium/WebKit browser checks and dependency-audit gate.
 - All 35 old Notion references migrated to current HALE workspace; four relevant sources added.
 
-## Validation record
+## Authorization and validation
 
-- 20 affected existing Notion pages updated and refetched; historical records and child pages preserved.
-- Context gate logic exercised in tool runtime: 39 sources and five boot files pass; full npm still pending.
-- Four pure clock/method scenarios exercised in tool runtime: pause/resume, delayed callbacks, duration clamp, phase boundaries and method isolation passed.
-- Full `npm run check`, fresh dependency audit and browser matrix: **pending**; no terminal/build environment is exposed in this session.
-- GitHub CI, exact candidate preview and actual iPhone product acceptance: **pending**.
-- Production remains `6cf1e77` / v0.2 until a validated authorized merge.
-- No human recording, interviews, expert safety review or participant commitments are fabricated.
+Julian reviewed the concrete prepared state4934777 and explicitly authorized from iPhone: “Ich arbeite am IPhone und gebe es frei!” Publishing this maintenance prototype does not mark a human recording, expert safety review, VoiceOver test or interview as complete.
+
+- Twenty affected existing Notion pages updated/refetched.
+- Full npm context/test/types/build passed; first audit blocked release on one critical/two high findings.
+- Targeted Next.js16.3.8 update, exact CI-generated lock, PostCSS8.5.23 and sharp0.35.5.
+- Patched run37025198612: full npm checks, zero vulnerabilities and six mobile Chromium/WebKit tests passed.
+- Final gate additionally exercises hidden-document pause (eight mobile cases) and checks the same journey against the public URL after main deployment.
+- Exact final-head CI, Vercel metadata, merge SHA and production proof are recorded in PR#6, GitHub release and the existing Notion release checkpoint; do not infer final success from an earlier run.
+- Previous production baseline6cf1e77/v0.2 and rejected August heads remain historical evidence.
+- Temporary lock resolver is removed before merge. No unrelated backend/audio service introduced.
 
 ## Recording integration
 

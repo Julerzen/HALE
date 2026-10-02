@@ -118,7 +118,7 @@ Use this checklist for every material change. A checked list records review; it 
 
 ## Review record · v0.3.1 October test preparation · 2026-10-02
 
-**Classification:** Draft implementation of D-025–D-029; release instruction received, device context pending. Production is still v0.2.
+**Classification:** Draft implementation of D-025–D-029; iPhone release instruction explicitly confirmed; production release follows successful final-head checks.
 
 - [x] Boot documents and all 40 available HALE Notion entities reviewed; linked Perplexity attachment body was not accessible and is not used as evidence
 - [x] main, PR #6, production and existing READY preview inspected
@@ -131,9 +131,21 @@ Use this checklist for every material change. A checked list records review; it 
 - [ ] npm context/test/types/build and fresh dependency audit pass for this candidate
 - [ ] Mobile Chromium/WebKit browser checks pass for this candidate
 - [ ] Candidate preview READY and exact-SHA mapped; review threads/checks clear
-- [ ] Current device-context condition answered or explicitly overridden
-- [ ] Concrete-candidate iPhone product acceptance recorded
+- [x] Current device-context confirmed: “Ich arbeite am IPhone und gebe es frei!”
+- [x] Concrete prepared commit4934777 and release explicitly approved from iPhone; no manual VoiceOver/test is fabricated
 - [ ] Authorized production release and post-deploy check complete
 - [ ] Julian recording, expert review and five-person test round complete
 
 The prepared repository files and affected existing Notion pages must carry the same draft status. Historical August validation does not validate this new candidate.
+
+## Security and release checks · 2026-10-02
+
+- [x] Initial full npm context/test/types/build passed on4934777; audit correctly blocked the release (one critical/two high)
+- [x] Targeted Next.js16.3.8 update selected from published release; CI generated its exact lock, PostCSS8.5.23 and sharp0.35.5
+- [x] Patched run37025198612 passed full npm checks, zero-vulnerability audit and six mobile Chromium/WebKit cases
+- [x] Temporary lock generation removed; final pipeline installs committed exact lock
+- [x] Background-pause regression and public-production mobile journey checks included
+- [ ] Exact final head passes the complete gate (including eight browser cases); status is recorded in PR#6
+- [ ] main/Vercel SHA agreement and public production journey verified after authorized merge
+
+Production checkpoint belongs in the existing Notion OS/Weekly Review and GitHub release/issue so its generated merge SHA can be recorded without circular commit IDs. Human recording and research work remain open.

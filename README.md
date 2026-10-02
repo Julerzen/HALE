@@ -1,6 +1,6 @@
 # HALE
 
-HALE is a mobile-first, evidence-aware breathwork product. Production is still **Work-to-Evening v0.2**; this branch prepares **v0.3.1** for the October five-person learning round. AC4 Warm Horizon is the selected master image world; final logo and full CI remain in development.
+HALE is a mobile-first, evidence-aware breathwork product. This repository state is **Work-to-Evening v0.3.1** for the October five-person learning round. AC4 Warm Horizon is the selected master image world; final logo and full CI remain in development.
 
 ## Start here
 
@@ -19,7 +19,7 @@ npm run test:browser
 
 ## Current scope
 
-A five-minute Ruhe prototype, optional session-local check-in, neutral visualizations, direction selection, and an immersive player. The player uses elapsed time, freezes time and motion on pause, and pauses when the app becomes hidden. Julian's recording is still missing; the current session starts without voice. Add reviewed, project-owned static audio only through `app/session-audio.ts`.
+A five-minute Ruhe prototype, optional session-local check-in, neutral visualizations, direction selection, and an immersive player. Runtime: Next.js16.3.8 with audited PostCSS8.5.23/sharp0.35.5 dependencies. The player uses elapsed time, freezes time and motion on pause, and pauses when the app becomes hidden. Julian's recording is still missing; the current session starts without voice. Add reviewed, project-owned static audio only through `app/session-audio.ts`.
 
 Supabase/accounts, additional methods and further Opening/logo polish are deferred. No raw check-in analytics or storage. Human interviews and expert safety review are outstanding. Deployment remains subject to the current-chat device-context rule in AGENTS.md.
 

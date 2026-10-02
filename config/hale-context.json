@@ -265,7 +265,7 @@
   ],
   "implementation": {
     "application": "Next.js mobile-first interactive prototype",
-    "currentJourney": "Work to Evening v0.3.1 test-preparation candidate",
+    "currentJourney": "Work to Evening v0.3.1",
     "brandDirection": {
       "master": "AC4 Warm Horizon",
       "companion": "AC1 Horizon",
@@ -277,7 +277,7 @@
     },
     "stateCheckIn": {
       "model": "activation-valence plus SVAC",
-      "status": "Implemented in draft; pending iPhone acceptance and main merge"
+      "status": "Implemented in v0.3.1; session-local; publication authorized from iPhone"
     },
     "backend": {
       "provider": "Supabase",
@@ -302,6 +302,19 @@
       "status": "Awaiting Julian recording",
       "source": null,
       "privacy": "Project-owned static media only; no check-in upload"
+    },
+    "version": "0.3.1",
+    "runtime": {
+      "next": "16.3.8",
+      "react": "19.2.8",
+      "postcss": "8.5.23",
+      "sharp": "0.35.5"
+    },
+    "release": {
+      "pullRequest": 6,
+      "authorization": "Explicit current-chat instruction and iPhone confirmation",
+      "productionUrl": "https://hale-eosin.vercel.app",
+      "verification": "GitHub final-head checks and Vercel SHA agreement; production browser checks on main push"
     }
   },
   "governance": {

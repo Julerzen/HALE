@@ -1,7 +1,23 @@
 import { test, expect } from "@playwright/test";
+import { readFileSync } from "node:fs";
+const releaseVersion = JSON.parse(readFileSync("package.json", "utf8")).version;
+
+test.beforeAll(async () => {
+  if (!process.env.HALE_TEST_BASE_URL) return;
+  test.setTimeout(90000);
+  const deadline = Date.now() + 60000;
+  while (Date.now() < deadline) {
+    const response = await fetch(process.env.HALE_TEST_BASE_URL);
+    const html = await response.text();
+    if (response.ok && html.includes(`HALE Work to Evening Prototyp v${releaseVersion}`)) return;
+    await new Promise(resolve => setTimeout(resolve, 2000));
+  }
+  throw new Error(`Production has not served HALE ${releaseVersion} within 60 seconds.`);
+});
 
 async function enter(page) {
   await page.goto("/");
+  await expect(page.locator("section.device")).toHaveAttribute("aria-label", `HALE Work to Evening Prototyp v${releaseVersion}`);
   await page.getByRole("button", { name: "In den Zwischenraum" }).click();
   await expect(page.getByRole("heading", { name: "Wo bist du gerade?" })).toBeFocused();
 }
@@ -84,4 +100,30 @@ test("other directions keep method open and reduced motion remains static on sho
   await page.getByRole("button", { name: "Beenden", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Was ist jetzt anders?" })).toBeFocused();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test("hidden-document guidance pauses and stays paused when returning", async ({ page }) => {
+  await enter(page);
+  await page.clock.install();
+  await practice(page);
+  await page.clock.fastForward(29000);
+  await page.clock.runFor(32);
+  await page.evaluate(() => {
+    Object.defineProperty(document, "hidden", { configurable: true, get: () => true });
+    document.dispatchEvent(new Event("visibilitychange"));
+  });
+  await expect(page.getByRole("button", { name: "Fortsetzen", exact: true })).toBeVisible();
+  const time = await page.locator(".practice-topbar-status").innerText();
+  await page.clock.fastForward(120000);
+  expect(await page.locator(".practice-topbar-status").innerText()).toBe(time);
+  await page.evaluate(() => {
+    delete document.hidden;
+    document.dispatchEvent(new Event("visibilitychange"));
+  });
+  await expect(page.getByRole("button", { name: "Fortsetzen", exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Fortsetzen", exact: true }).click();
+  await page.clock.fastForward(1000);
+  await page.clock.runFor(32);
+  expect(await page.locator(".practice-topbar-status").innerText()).not.toBe(time);
+  await page.getByRole("button", { name: "Beenden", exact: true }).click();
 });

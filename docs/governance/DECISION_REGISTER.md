@@ -42,6 +42,13 @@ This register preserves the minimum set of decisions and explicitly labeled hypo
 | D-028 | Current state | Julian confirmed that no voice recording exists yet. | Null audio source, honest silent start, no invented voice evidence; test readiness requires the recording. |
 | D-029 | Decision (source reconciliation) | Migrate the source registry to the fetched HALE workspace IDs and align stale summaries with B-008/B-011 and the October plan. | 39 candidate sources; historical decisions remain dated; no new context hub or final logo approval. |
 
+## Release authorization and security close-out · 2026-10-02
+
+- Julian explicitly confirmed current iPhone context and publication of the concrete prepared v0.3.1 state: “Ich arbeite am IPhone und gebe es frei!”
+- D-012 device authorization is satisfied for this release; no additional approval flow is introduced for routine release fixes.
+- **D-030 · Decision:** ship Next.js 16.3.8 and its exact regenerated lock, resolving the fresh critical/high advisories; require an audit and Chromium/WebKit core flow before main merge.
+- **D-031 · Decision:** verify the public production version and mobile journey after main deploy. This is automated technical evidence; recording, VoiceOver, expert safety review and qualitative interviews remain separate human outcomes.
+
 ## Amendment rule
 
 - Never rewrite history merely to make a past hypothesis look final.
