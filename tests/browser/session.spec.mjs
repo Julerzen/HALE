@@ -21,6 +21,11 @@ async function enter(page) {
   await page.getByRole("button", { name: "In den Zwischenraum" }).click();
   await expect(page.getByRole("heading", { name: "Wo bist du gerade?" })).toBeFocused();
 }
+async function remaining(page) {
+  const value = await page.locator(".practice-topbar-status span").innerText();
+  const [minutes, seconds] = value.trim().split(":").map(Number);
+  return minutes * 60 + seconds;
+}
 async function practice(page) {
   await page.getByRole("button", { name: "Ohne Check-in weiter" }).click();
   await page.getByRole("button", { name: "Passende Räume ansehen" }).click();
@@ -34,14 +39,17 @@ async function practice(page) {
 test("mobile pause freezes time and the aperture; resume and completion use the same clock", async ({ page }, testInfo) => {
   const errors = [];
   page.on("pageerror", error => errors.push(error.message));
-  await enter(page);
+  // Install before app scripts load so WebKit never mixes native and simulated performance clocks.
   await page.clock.install();
+  await enter(page);
   await practice(page);
   await expect(page.locator(".practice-phase")).toHaveText("Natürlich atmen");
   await page.clock.fastForward(91000);
   await page.clock.runFor(32);
   await expect(page.locator(".practice-phase")).toHaveText("Einatmen");
+  const beforePause = await remaining(page);
   await page.getByRole("button", { name: "Pausieren", exact: true }).click();
+  expect(Math.abs(await remaining(page) - beforePause)).toBeLessThanOrEqual(1);
   const time = await page.locator(".practice-topbar-status").innerText();
   const shape = await page.locator(".practice-hale-aperture .aperture-left").getAttribute("style");
   await page.clock.fastForward(60000);
@@ -127,8 +135,9 @@ test("hidden-document guidance pauses and stays paused when returning", async ({
   });
   await expect(page.getByRole("button", { name: "Fortsetzen", exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Fortsetzen", exact: true }).click();
-  await page.clock.fastForward(1000);
-  await page.clock.runFor(32);
+  await expect(page.getByRole("button", { name: "Pausieren", exact: true })).toBeVisible();
+  await page.clock.fastForward(2000);
+  await page.clock.runFor(100);
   expect(await page.locator(".practice-topbar-status").innerText()).not.toBe(time);
   await page.getByRole("button", { name: "Beenden", exact: true }).click();
 });
