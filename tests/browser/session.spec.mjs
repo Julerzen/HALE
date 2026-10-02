@@ -31,7 +31,7 @@ async function practice(page) {
   await expect(page.getByRole("button", { name: "Pausieren", exact: true })).toBeVisible();
 }
 
-test("mobile pause freezes time and the aperture; resume and completion use the same clock", async ({ page }) => {
+test("mobile pause freezes time and the aperture; resume and completion use the same clock", async ({ page }, testInfo) => {
   const errors = [];
   page.on("pageerror", error => errors.push(error.message));
   await enter(page);
@@ -48,8 +48,13 @@ test("mobile pause freezes time and the aperture; resume and completion use the 
   expect(await page.locator(".practice-topbar-status").innerText()).toBe(time);
   expect(await page.locator(".practice-hale-aperture .aperture-left").getAttribute("style")).toBe(shape);
   await page.getByRole("button", { name: "Fortsetzen", exact: true }).click();
-  await page.clock.fastForward(135000);
-  await page.clock.runFor(32);
+  await expect(page.getByRole("button", { name: "Pausieren", exact: true })).toBeVisible();
+  await page.clock.runFor(100);
+  console.info(`HALE resume (${testInfo.project.name}): ${await page.locator(".practice-topbar-status").innerText()}`);
+  // Stay beyond the natural-breathing boundary; exact 226s is covered by the pure timeline test.
+  await page.clock.fastForward(140000);
+  await page.clock.runFor(100);
+  console.info(`HALE landing (${testInfo.project.name}): ${await page.locator(".practice-topbar-status").innerText()}`);
   await expect(page.locator(".practice-phase")).toHaveText("Natürlich atmen");
   await page.clock.fastForward(75000);
   await page.clock.runFor(32);
