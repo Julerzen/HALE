@@ -21,11 +21,12 @@ Julian reviewed the concrete prepared state4934777 and explicitly authorized fro
 
 - Twenty affected existing Notion pages updated/refetched.
 - Full npm context/test/types/build passed; first audit blocked release on one critical/two high findings.
-- Targeted Next.js16.3.8 update, exact CI-generated lock, PostCSS8.5.23 and sharp0.35.5.
-- Patched run37025198612: full npm checks, zero vulnerabilities and six mobile Chromium/WebKit tests passed.
+- Targeted Next.js 16.3.8 update, exact CI-generated lock, PostCSS 8.5.23 and sharp 0.35.5.
+- Patched run 37025198612: full npm checks, zero vulnerabilities and six mobile Chromium/WebKit tests passed.
+- Implementation commit1e4c64f passed [run37025912784](https://github.com/Julerzen/HALE/actions/runs/37025912784): full npm checks, zero vulnerabilities and all eight mobile cases. Exact-SHA preview was READY and served HTTP200/version0.3.1.
 - Final gate additionally exercises hidden-document pause (eight mobile cases) and checks the same journey against the public URL after main deployment.
-- Exact final-head CI, Vercel metadata, merge SHA and production proof are recorded in PR#6, GitHub release and the existing Notion release checkpoint; do not infer final success from an earlier run.
-- Previous production baseline6cf1e77/v0.2 and rejected August heads remain historical evidence.
+- Exact final-head CI, Vercel metadata, merge SHA and production proof are recorded in PR#6, GitHub issue#7 and the existing Notion release checkpoint; do not infer final success from an earlier run.
+- Previous production baseline 6cf1e77/v0.2 and rejected August heads remain historical evidence.
 - Temporary lock resolver is removed before merge. No unrelated backend/audio service introduced.
 
 ## Recording integration

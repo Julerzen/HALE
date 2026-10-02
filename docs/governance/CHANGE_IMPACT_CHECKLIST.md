@@ -116,7 +116,7 @@ Use this checklist for every material change. A checked list records review; it 
 - [ ] Explicit post-preview merge confirmation is recorded for that exact commit
 - [ ] Production deployment and post-deploy smoke/error checks are verified
 
-## Review record · v0.3.1 October test preparation · 2026-10-02
+## Pre-merge review record · v0.3.1 · 2026-10-02
 
 **Classification:** Draft implementation of D-025–D-029; iPhone release instruction explicitly confirmed; production release follows successful final-head checks.
 
@@ -128,11 +128,11 @@ Use this checklist for every material change. A checked list records review; it 
 - [x] Off-app store/social/event/packaging surfaces reviewed as unaffected; no external messages sent
 - [x] Pure elapsed-clock/method scenarios and context gate logic exercised in tool runtime
 - [x] 20 affected existing Notion pages updated and refetched; draft/release/human-outcome boundaries retained
-- [ ] npm context/test/types/build and fresh dependency audit pass for this candidate
-- [ ] Mobile Chromium/WebKit browser checks pass for this candidate
-- [ ] Candidate preview READY and exact-SHA mapped; review threads/checks clear
+- [x] Implementation head1e4c64f: npm context/test/types/build and fresh zero-vulnerability dependency audit pass
+- [x] Implementation head1e4c64f: eight mobile Chromium/WebKit checks pass
+- [x] Implementation preview READY on1e4c64f, HTTP200/version0.3.1; review threads empty
 - [x] Current device-context confirmed: “Ich arbeite am IPhone und gebe es frei!”
-- [x] Concrete prepared commit4934777 and release explicitly approved from iPhone; no manual VoiceOver/test is fabricated
+- [x] Concrete prepared commit 4934777 and release explicitly approved from iPhone; no manual VoiceOver/test is fabricated
 - [ ] Authorized production release and post-deploy check complete
 - [ ] Julian recording, expert review and five-person test round complete
 
@@ -140,12 +140,18 @@ The prepared repository files and affected existing Notion pages must carry the 
 
 ## Security and release checks · 2026-10-02
 
-- [x] Initial full npm context/test/types/build passed on4934777; audit correctly blocked the release (one critical/two high)
-- [x] Targeted Next.js16.3.8 update selected from published release; CI generated its exact lock, PostCSS8.5.23 and sharp0.35.5
-- [x] Patched run37025198612 passed full npm checks, zero-vulnerability audit and six mobile Chromium/WebKit cases
+- [x] Initial full npm context/test/types/build passed on 4934777; audit correctly blocked the release (one critical/two high)
+- [x] Targeted Next.js 16.3.8 update selected from published release; CI generated its exact lock, PostCSS 8.5.23 and sharp 0.35.5
+- [x] Patched run 37025198612 passed full npm checks, zero-vulnerability audit and six mobile Chromium/WebKit cases
 - [x] Temporary lock generation removed; final pipeline installs committed exact lock
 - [x] Background-pause regression and public-production mobile journey checks included
-- [ ] Exact final head passes the complete gate (including eight browser cases); status is recorded in PR#6
+- [x] Implementation head1e4c64f passes the complete gate, including eight browser cases (run37025912784); final documentation head must also pass its own GitHub gate
 - [ ] main/Vercel SHA agreement and public production journey verified after authorized merge
 
-Production checkpoint belongs in the existing Notion OS/Weekly Review and GitHub release/issue so its generated merge SHA can be recorded without circular commit IDs. Human recording and research work remain open.
+Production checkpoint belongs in the existing Notion OS/Weekly Review and GitHub PR/issue so its generated merge SHA can be recorded without circular commit IDs. Human recording and research work remain open.
+
+## Final documentation checkpoint
+
+Implementation commit `1e4c64fcd6bb4d54478293242cff7af0ab630629` passed the complete gate in [run37025912784](https://github.com/Julerzen/HALE/actions/runs/37025912784): 39 sources/five boot files, four Node tests, TypeScript, build, zero vulnerabilities and eight mobile Chromium/WebKit cases. Vercel preview `dpl_3U7BrVXyHrqQ7waYmCuEzRZbLRGs` was READY, exact-SHA matched, HTTP200 and version0.3.1. No review threads.
+
+This final checkpoint changes documentation only. The approved app/dependency/workflow/test blobs are unchanged. Post-merge production verification remains a live checkpoint in the existing Notion OS/Weekly Review and PR#6/issue#7; human recording and interviews remain open.
